@@ -40,7 +40,7 @@ export default function About() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-[#EDE6D8]/60" />
+      <div className="absolute inset-0 bg-[#e2e7d9]" />
 
       <div className="relative container">
         {/* Section label */}
@@ -65,12 +65,12 @@ export default function About() {
               >
                 夢
               </span>
-               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">E se a sua história
+               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">Um espaço de
                 <br />
-                <em className="italic text-[#8FBF8F]">não precisasse ser</em>
+                <em className="italic text-[#8FBF8F]">escuta</em>
+                <em className="italic text-[#8FBF8F]">, elaboração</em>
                 <br />
-                corrigida, mas{" "}
-                <em className="italic">elaborada?</em>
+                e <em className="italic text-[#8FBF8F]">transformação</em>.
               </h2>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function About() {
             </p>
             <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
               Nosso diferencial está na forma como conduzimos cada atendimento:
-              com clareza, ética e proximidade. Um espaço profissional de cuidado —
+              com clareza, ética e proximidade. Um espaço profissional de cuidado:
               acessível, responsável e centrado no desenvolvimento emocional.
             </p>
 

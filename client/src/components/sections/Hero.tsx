@@ -61,7 +61,7 @@ export default function Hero() {
 
           {/* Main heading */}
           <h1
-            className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-6 transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-snug text-white mb-6 transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             E se a sua história
             <br />
@@ -107,7 +107,7 @@ export default function Hero() {
             {[
               { value: "100%", label: "Online" },
               { value: "+5 anos", label: "de experiência" },
-              { value: "2", label: "Profissionais especialistas" },
+              { value: "Profissionais", label: "especialistas" },
               { value: "+1500", label: "atendimentos em todo o Brasil" },
             ].map((stat) => (
               <div key={stat.label}>
