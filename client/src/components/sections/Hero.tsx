@@ -35,9 +35,9 @@ export default function Hero() {
       >
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
-      {/* Light overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#fafafa]/65 via-[#fafafa]/55 to-[#fafafa]/35" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafafa]/65 to-transparent" />
+      {/* Minimal overlay - video stays opaque */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-black/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent" />
 
       {/* Kanji 夢 decorative background element */}
       <div
@@ -61,7 +61,8 @@ export default function Hero() {
 
           {/* Main heading */}
           <h1
-            className={`font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[0.95] text-white mb-6 transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[0.95] text-white mb-6 transition-all duration-700 delay-300 drop-shadow-lg ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3)' }}
           >
             E se a sua história
             <br />
