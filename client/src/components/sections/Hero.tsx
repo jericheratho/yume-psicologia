@@ -57,7 +57,6 @@ export default function Hero() {
           >
             <div className="h-px w-8 bg-[#8FBF8F]" />
             <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
-              Psicologia Online
             </span>
           </div>
 
@@ -71,7 +70,7 @@ export default function Hero() {
             <br />
             corrigida, mas
             <br />
-            elaborada?
+            <em className="italic text-[#8FBF8F]">elaborada?</em>
           </h1>
 
           {/* Subtitle */}
