@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia_5c1054ef.webp";
+const HERO_VIDEO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/Untitleddesign_3da374c0.mp4";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -24,13 +24,17 @@ export default function Hero() {
     <section
       id="inicio"
       className="relative min-h-screen flex items-end overflow-hidden"
-      style={{
-        backgroundImage: `url(${HERO_IMAGE})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
     >
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
       {/* Gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
