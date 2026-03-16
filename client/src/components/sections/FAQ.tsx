@@ -50,18 +50,18 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         aria-expanded={open}
       >
         <div className="flex items-start gap-4">
-          <span className="font-display text-sm text-[#7A8C7E] mt-0.5 flex-shrink-0">
+          <span className="font-display text-sm text-[#8FBF8F] mt-0.5 flex-shrink-0">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="font-body text-base font-light text-[#2C2A26] group-hover:text-[#7A8C7E] transition-colors leading-relaxed">
+          <span className="font-body text-base font-light text-[#2C2A26] group-hover:text-[#8FBF8F] transition-colors leading-relaxed">
             {faq.question}
           </span>
         </div>
         <div className="flex-shrink-0 mt-0.5">
           {open ? (
-            <Minus size={16} className="text-[#7A8C7E]" />
+            <Minus size={16} className="text-[#8FBF8F]" />
           ) : (
-            <Plus size={16} className="text-[#4A4640] group-hover:text-[#7A8C7E] transition-colors" />
+            <Plus size={16} className="text-[#4A4640] group-hover:text-[#8FBF8F] transition-colors" />
           )}
         </div>
       </button>
@@ -83,20 +83,19 @@ export default function FAQ() {
   const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-[#F5F0E8]">
+    <section id="faq" className="py-24 md:py-32 bg-white">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
           {/* Left: header */}
           <div ref={headingRef} className="fade-up lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-8 bg-[#7A8C7E]" />
-              <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
                 Dúvidas
               </span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] leading-tight mb-6">
-              Perguntas{" "}
-              <em className="italic text-[#7A8C7E]">frequentes</em>
+                 <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] leading-tight mb-6">Perguntas{" "}
+              <em className="italic text-[#8FBF8F]">frequentes</em>
             </h2>
             <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-8">
               Não encontrou o que procurava? Entre em contato pelo WhatsApp e
@@ -106,7 +105,7 @@ export default function FAQ() {
               href="https://wa.me/5511999999999?text=Olá%2C+tenho+uma+dúvida+sobre+os+serviços+da+Yume."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#7A8C7E] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A6B5E] transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
               Falar pelo WhatsApp
             </a>

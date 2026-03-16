@@ -35,7 +35,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#F5F0E8]/95 backdrop-blur-sm shadow-sm"
+            ? "bg-white/95 backdrop-blur-sm shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -72,7 +72,7 @@ export default function Navbar() {
               href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-5 py-2 bg-[#7A8C7E] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A6B5E] transition-colors duration-300"
+              className="px-5 py-2 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
               Agendar consulta
             </a>
@@ -91,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#F5F0E8] flex flex-col justify-center items-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-white flex flex-col justify-center items-center gap-8 transition-all duration-500 md:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -109,7 +109,7 @@ export default function Navbar() {
           href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 px-8 py-3 bg-[#7A8C7E] text-white font-body text-base font-medium tracking-wide rounded-sm"
+          className="mt-4 px-8 py-3 bg-[#8FBF8F] text-white font-body text-base font-medium tracking-wide rounded-sm"
           onClick={() => setMenuOpen(false)}
         >
           Agendar consulta

@@ -30,7 +30,7 @@ export default function About() {
   const valuesRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section id="sobre" className="py-24 md:py-32 relative overflow-hidden bg-[#EDE6D8]">
+    <section id="sobre" className="py-24 md:py-32 relative overflow-hidden bg-[#F9F8F6]">
       {/* Abstract watercolor background */}
       <div className="absolute inset-0 opacity-30">
         <img
@@ -46,8 +46,8 @@ export default function About() {
         {/* Section label */}
         <div ref={headingRef} className="fade-up mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#7A8C7E]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Sobre a Yume
             </span>
           </div>
@@ -65,10 +65,9 @@ export default function About() {
               >
                 夢
               </span>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">
-                E se a sua história
+               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">E se a sua história
                 <br />
-                <em className="italic text-[#7A8C7E]">não precisasse ser</em>
+                <em className="italic text-[#8FBF8F]">não precisasse ser</em>
                 <br />
                 corrigida, mas{" "}
                 <em className="italic">elaborada?</em>
@@ -96,7 +95,7 @@ export default function About() {
             </p>
 
             {/* Accessibility note */}
-            <div className="mt-2 p-4 border border-[#7A8C7E]/30 bg-white/40 rounded-sm">
+            <div className="mt-2 p-4 border border-[#8FBF8F]/30 bg-white/40 rounded-sm">
               <p className="font-body text-xs font-light text-[#4A4640] leading-relaxed">
                 💚 Cuidado psicológico que cabe no seu bolso, com{" "}
                 <strong className="font-medium">planos sociais</strong> e opção de{" "}

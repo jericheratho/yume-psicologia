@@ -39,19 +39,18 @@ export default function Testimonials() {
   const next = () => setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
 
   return (
-    <section id="depoimentos" className="py-24 md:py-32 bg-[#EDE6D8]">
+    <section id="depoimentos" className="py-24 md:py-32 bg-[#F9F8F6]">
       <div className="container">
         {/* Section header */}
         <div ref={headingRef} className="fade-up mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#7A8C7E]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Depoimentos
             </span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">
-            O que nossos{" "}
-            <em className="italic text-[#7A8C7E]">clientes dizem...</em>
+           <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">O que nossos{" "}
+            <em className="italic text-[#8FBF8F]">clientes dizem...</em>
           </h2>
         </div>
 
@@ -78,17 +77,17 @@ export default function Testimonials() {
                   </div>
                   {/* Navigation */}
                   <div className="flex gap-2">
-                    <button
-                      onClick={prev}
-                      className="w-9 h-9 flex items-center justify-center border border-[#2C2A26]/20 text-[#4A4640] hover:border-[#7A8C7E] hover:text-[#7A8C7E] transition-colors rounded-sm"
+                  <button
+                    onClick={prev}
+                    className="w-9 h-9 flex items-center justify-center border border-[#2C2A26]/20 text-[#4A4640] hover:border-[#8FBF8F] hover:text-[#8FBF8F] transition-colors rounded-sm"
                       aria-label="Anterior"
                     >
                       <ChevronLeft size={16} />
                     </button>
                     <button
                       onClick={next}
-                      className="w-9 h-9 flex items-center justify-center border border-[#2C2A26]/20 text-[#4A4640] hover:border-[#7A8C7E] hover:text-[#7A8C7E] transition-colors rounded-sm"
-                      aria-label="Próximo"
+                      className="w-9 h-9 flex items-center justify-center border border-[#2C2A26]/20 text-[#4A4640] hover:border-[#8FBF8F] hover:text-[#8FBF8F] transition-colors rounded-sm"
+                    aria-label="Próximo"
                     >
                       <ChevronRight size={16} />
                     </button>
@@ -105,8 +104,8 @@ export default function Testimonials() {
                   onClick={() => setActive(i)}
                   className={`text-left p-5 border rounded-sm transition-all duration-300 ${
                     i === active
-                      ? "border-[#7A8C7E] bg-[#7A8C7E]/10"
-                      : "border-[#2C2A26]/10 bg-white/40 hover:border-[#7A8C7E]/40"
+                      ? "border-[#8FBF8F] bg-[#8FBF8F]/10"
+                      : "border-[#2C2A26]/10 bg-white/40 hover:border-[#8FBF8F]/40"
                   }`}
                 >
                   <p className="font-body text-xs font-light text-[#4A4640] leading-relaxed line-clamp-2 mb-2">
@@ -115,7 +114,7 @@ export default function Testimonials() {
                   <div className="flex items-center justify-between">
                     <p className="font-body text-xs font-medium text-[#2C2A26]">{t.name}</p>
                     <span
-                      className={`w-1.5 h-1.5 rounded-full ${i === active ? "bg-[#7A8C7E]" : "bg-[#2C2A26]/20"}`}
+                      className={`w-1.5 h-1.5 rounded-full ${i === active ? "bg-[#8FBF8F]" : "bg-[#2C2A26]/20"}`}
                     />
                   </div>
                 </button>
@@ -127,8 +126,8 @@ export default function Testimonials() {
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      i === active ? "w-6 bg-[#7A8C7E]" : "w-2 bg-[#2C2A26]/20"
+                  className={`h-1 rounded-full transition-all duration-300 ${
+                    i === active ? "w-6 bg-[#8FBF8F]" : "w-2 bg-[#2C2A26]/20"
                     }`}
                     aria-label={`Depoimento ${i + 1}`}
                   />

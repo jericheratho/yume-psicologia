@@ -36,20 +36,19 @@ export default function HowItWorks() {
   const stepsRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section className="py-24 md:py-32 bg-[#7A8C7E]">
+    <section className="py-24 md:py-32 bg-[#8FBF8F]">
       <div className="container">
         {/* Section header */}
         <div ref={headingRef} className="fade-up mb-16 md:mb-20">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-white/40" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-white/60">
+            <div className="h-px w-8 bg-white/50" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-white/70">
               Como funciona
             </span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white max-w-lg leading-tight">
-              Como agendar{" "}
-              <em className="italic text-white/70">seu atendimento?</em>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white max-w-lg leading-tight">Como agendar{" "}
+              <em className="italic text-white/80">seu atendimento?</em>
             </h2>
             <p className="font-body text-sm font-light text-white/70 max-w-xs leading-relaxed">
               Simples, humano e sem burocracia. Do primeiro contato à primeira sessão.

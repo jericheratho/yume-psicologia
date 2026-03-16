@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-end overflow-hidden bg-[#F5F0E8]"
+      className="relative min-h-screen flex items-end overflow-hidden bg-white"
     >
       {/* Background image — right-aligned, covers 65% of width on desktop */}
       <div
@@ -35,9 +35,9 @@ export default function Hero() {
           className="absolute right-0 top-0 h-full w-full md:w-[65%] object-cover object-center"
         />
         {/* Gradient overlay — left fade for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8] via-[#F5F0E8]/85 md:via-[#F5F0E8]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 md:via-white/60 to-transparent" />
         {/* Bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F0E8] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </div>
 
       {/* Kanji 夢 decorative background element */}
@@ -55,8 +55,8 @@ export default function Hero() {
           <div
             className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            <div className="h-px w-8 bg-[#7A8C7E]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Psicologia Online
             </span>
           </div>
@@ -67,7 +67,7 @@ export default function Hero() {
           >
             Sonhos,
             <br />
-            <em className="italic text-[#7A8C7E]">acolhimento</em>
+            <em className="italic text-[#8FBF8F]">acolhimento</em>
             <br />
             & muito afeto.
           </h1>
@@ -88,13 +88,13 @@ export default function Hero() {
               href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#7A8C7E] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A6B5E] transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
               Agendar consulta
             </a>
             <button
               onClick={scrollToServices}
-              className="inline-flex items-center justify-center px-8 py-3.5 border border-[#7A8C7E] text-[#7A8C7E] font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#7A8C7E]/10 transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-3.5 border border-[#8FBF8F] text-[#8FBF8F] font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#8FBF8F]/10 transition-colors duration-300"
             >
               Conhecer serviços
             </button>
@@ -121,7 +121,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={scrollToServices}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#7A8C7E] opacity-60 hover:opacity-100 transition-opacity animate-bounce"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#8FBF8F] opacity-60 hover:opacity-100 transition-opacity animate-bounce"
         aria-label="Rolar para baixo"
       >
         <ArrowDown size={18} strokeWidth={1.5} />

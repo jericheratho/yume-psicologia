@@ -32,20 +32,19 @@ export default function Team() {
   const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section id="equipe" className="py-24 md:py-32 bg-[#F5F0E8]">
+    <section id="equipe" className="py-24 md:py-32 bg-white">
       <div className="container">
         {/* Section header */}
         <div ref={headingRef} className="fade-up mb-16 md:mb-20">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#7A8C7E]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Nossa equipe
             </span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">
-              Conheça quem vai{" "}
-              <em className="italic text-[#7A8C7E]">cuidar de você</em>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">Conheça quem vai{" "}
+              <em className="italic text-[#8FBF8F]">cuidar de você</em>
             </h2>
             <p className="font-body text-sm font-light text-[#4A4640] max-w-xs leading-relaxed">
               Profissionais dedicados a entender a sua singularidade.
@@ -65,7 +64,7 @@ export default function Team() {
               />
             </div>
             {/* Decorative accent */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#C4896F]/20 rounded-sm -z-10" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#8FBF8F]/20 rounded-sm -z-10" />
           </div>
 
           {/* Right: team cards */}
@@ -81,7 +80,7 @@ export default function Team() {
                     <h3 className="font-display text-2xl font-medium text-[#2C2A26]">
                       {member.name}
                     </h3>
-                    <p className="font-body text-sm font-light text-[#7A8C7E] mt-0.5">
+                    <p className="font-body text-sm font-light text-[#8FBF8F] mt-0.5">
                       {member.role} · {member.crp}
                     </p>
                   </div>
@@ -89,7 +88,7 @@ export default function Team() {
                     href={member.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#7A8C7E] hover:text-[#5A6B5E] transition-colors"
+                    className="text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors"
                     aria-label={`Instagram de ${member.name}`}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -102,7 +101,7 @@ export default function Team() {
 
                 {/* Approach tag */}
                 <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-[#7A8C7E]/10 text-[#7A8C7E] font-body text-xs font-light tracking-wide rounded-sm">
+                  <span className="inline-block px-3 py-1 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-xs font-light tracking-wide rounded-sm">
                     {member.approach}
                   </span>
                 </div>
@@ -130,7 +129,7 @@ export default function Team() {
                     href={`https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+uma+consulta+com+${encodeURIComponent(member.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-sm font-light text-[#7A8C7E] hover:text-[#5A6B5E] transition-colors underline underline-offset-4"
+                    className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
                   >
                     Falar com {member.name.split(" ")[0]} →
                   </a>

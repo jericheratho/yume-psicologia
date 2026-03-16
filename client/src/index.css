@@ -6,7 +6,7 @@
 /* ============================================================
    YUME PSICOLOGIA — Design System
    Philosophy: Japonismo Contemporâneo / Wabi-sabi Minimalism
-   Palette: Warm cream, moss green-grey, soft terracotta
+   Brand Colors: Sage Green (#8FBF8F), Cream, White, Deep Ink
    Fonts: Cormorant Garamond (display) + DM Sans (body)
    ============================================================ */
 
@@ -48,15 +48,13 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Yume custom color tokens */
+  /* Yume brand color tokens */
+  --color-sage: #8FBF8F;
+  --color-sage-dark: #6B9B6B;
+  --color-sage-light: #A8D4A8;
   --color-cream: #F5F0E8;
   --color-cream-dark: #EDE6D8;
-  --color-moss: #7A8C7E;
-  --color-moss-light: #9BAF9E;
-  --color-moss-dark: #5A6B5E;
-  --color-terracotta: #C4896F;
-  --color-terracotta-light: #D4A08A;
-  --color-terracotta-dark: #A86E55;
+  --color-white: #FFFFFF;
   --color-ink: #2C2A26;
   --color-ink-light: #4A4640;
 }
@@ -64,7 +62,7 @@
 :root {
   --radius: 0.25rem;
 
-  /* Yume Psicologia light theme — warm cream base */
+  /* Yume Psicologia light theme — cream base with sage green accent */
   --background: oklch(0.972 0.008 80);       /* warm cream #F5F0E8 */
   --foreground: oklch(0.22 0.012 60);        /* deep ink #2C2A26 */
 
@@ -74,18 +72,18 @@
   --popover: oklch(0.985 0.005 80);
   --popover-foreground: oklch(0.22 0.012 60);
 
-  /* Primary: moss green */
-  --primary: oklch(0.52 0.055 155);          /* #7A8C7E */
+  /* Primary: sage green from brand logo */
+  --primary: oklch(0.685 0.065 140);         /* #8FBF8F sage green */
   --primary-foreground: oklch(0.98 0.003 80);
 
-  /* Secondary: terracotta */
-  --secondary: oklch(0.68 0.09 40);          /* #C4896F */
+  /* Secondary: darker sage for depth */
+  --secondary: oklch(0.58 0.055 140);        /* #6B9B6B darker sage */
   --secondary-foreground: oklch(0.98 0.003 80);
 
   --muted: oklch(0.94 0.008 80);
   --muted-foreground: oklch(0.50 0.015 60);
 
-  --accent: oklch(0.68 0.09 40);
+  --accent: oklch(0.685 0.065 140);
   --accent-foreground: oklch(0.98 0.003 80);
 
   --destructive: oklch(0.577 0.245 27.325);
@@ -93,22 +91,22 @@
 
   --border: oklch(0.88 0.012 80);
   --input: oklch(0.88 0.012 80);
-  --ring: oklch(0.52 0.055 155);
+  --ring: oklch(0.685 0.065 140);
 
-  --chart-1: oklch(0.52 0.055 155);
-  --chart-2: oklch(0.68 0.09 40);
-  --chart-3: oklch(0.72 0.07 80);
-  --chart-4: oklch(0.60 0.06 155);
-  --chart-5: oklch(0.75 0.08 40);
+  --chart-1: oklch(0.685 0.065 140);
+  --chart-2: oklch(0.58 0.055 140);
+  --chart-3: oklch(0.72 0.07 140);
+  --chart-4: oklch(0.65 0.06 140);
+  --chart-5: oklch(0.75 0.08 140);
 
   --sidebar: oklch(0.96 0.008 80);
   --sidebar-foreground: oklch(0.22 0.012 60);
-  --sidebar-primary: oklch(0.52 0.055 155);
+  --sidebar-primary: oklch(0.685 0.065 140);
   --sidebar-primary-foreground: oklch(0.98 0.003 80);
   --sidebar-accent: oklch(0.94 0.008 80);
   --sidebar-accent-foreground: oklch(0.22 0.012 60);
   --sidebar-border: oklch(0.88 0.012 80);
-  --sidebar-ring: oklch(0.52 0.055 155);
+  --sidebar-ring: oklch(0.685 0.065 140);
 }
 
 @layer base {

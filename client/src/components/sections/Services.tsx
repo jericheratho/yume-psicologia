@@ -78,8 +78,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       ref={ref}
       className={`fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
         service.highlight
-          ? "bg-[#7A8C7E] border-[#7A8C7E] text-white"
-          : "bg-white/60 border-[#2C2A26]/10 hover:border-[#7A8C7E]/40"
+      ? "bg-[#8FBF8F] border-[#8FBF8F] text-white"
+            : "bg-white/60 border-[#2C2A26]/10 hover:border-[#8FBF8F]/40"
       }`}
     >
       {/* Number */}
@@ -94,7 +94,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       {/* Icon */}
       <div
         className={`w-10 h-10 flex items-center justify-center rounded-sm mb-5 ${
-          service.highlight ? "bg-white/20" : "bg-[#7A8C7E]/10"
+          service.highlight ? "bg-white/20" : "bg-[#8FBF8F]/10"
         }`}
       >
         <Icon
@@ -108,7 +108,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       <div className="flex-1">
         <p
           className={`font-body text-xs font-light tracking-[0.2em] uppercase mb-1 ${
-            service.highlight ? "text-white/60" : "text-[#7A8C7E]"
+            service.highlight ? "text-white/60" : "text-[#8FBF8F]"
           }`}
         >
           {service.subtitle}
@@ -133,7 +133,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       <div className="mt-5 pt-5 border-t border-current/10">
         <span
           className={`font-body text-xs font-light tracking-wide ${
-            service.highlight ? "text-white/60" : "text-[#7A8C7E]"
+               service.highlight ? "text-white" : "text-[#8FBF8F]"
           }`}
         >
           {service.tag}
@@ -147,20 +147,19 @@ export default function Services() {
   const headingRef = useScrollReveal(0.2) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section id="servicos" className="py-24 md:py-32 bg-[#F5F0E8]">
+    <section id="servicos" className="py-24 md:py-32 bg-white">
       <div className="container">
         {/* Section header */}
         <div ref={headingRef} className="fade-up mb-16 md:mb-20">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#7A8C7E]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Nossos serviços
             </span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">
-              Não é só terapia online.{" "}
-              <em className="italic text-[#7A8C7E]">Deixa a gente te explicar.</em>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">Não é só terapia online.{" "}
+              <em className="italic text-[#8FBF8F]">Deixa a gente te explicar.</em>
             </h2>
             <p className="font-body text-sm font-light text-[#4A4640] max-w-xs leading-relaxed">
               Cada modalidade foi pensada para atender um momento específico da
@@ -203,11 +202,11 @@ export default function Services() {
             href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+saber+mais+sobre+os+serviços."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#C4896F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#A86E55] transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#6B9B6B] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A7B5A] transition-colors duration-300"
           >
             Não sei qual serviço escolher — me ajude
           </a>
-          <p className="font-body text-xs text-[#7A8C7E] mt-3">
+          <p className="font-body text-xs text-[#8FBF8F] mt-3">
             Conversamos primeiro e indicamos o melhor formato para você.
           </p>
         </div>
