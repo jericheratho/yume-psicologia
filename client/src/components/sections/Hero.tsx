@@ -65,11 +65,13 @@ export default function Hero() {
           <h1
             className={`font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[1.1] text-[#2C2A26] mb-6 transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
-            Sonhos,
+            E se a sua história
             <br />
-            <em className="italic text-[#8FBF8F]">acolhimento</em>
+            <em className="italic text-[#8FBF8F]">não precisasse ser</em>
             <br />
-            & muito afeto.
+            corrigida, mas
+            <br />
+            elaborada?
           </h1>
 
           {/* Subtitle */}
