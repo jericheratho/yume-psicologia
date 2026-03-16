@@ -51,11 +51,11 @@ export default function Hero() {
       {/* Content */}
       <div className="relative container pb-24 pt-40 md:pt-20 md:pb-32">
         <div className="max-w-xl">
-          {/* Eyebrow */}
+          {/* Eyebrow - hidden */}
           <div
             className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <div className="hidden" />
             <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
             </span>
           </div>
