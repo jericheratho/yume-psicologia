@@ -68,7 +68,7 @@ export default function HowItWorks() {
               }`}
             >
               {/* Step number */}
-              <div className="font-display text-6xl font-light text-white/10 leading-none mb-6">
+              <div className="font-display text-6xl font-light text-[#d9ecda] leading-none mb-6">
                 {step.number}
               </div>
 
@@ -92,7 +92,7 @@ export default function HowItWorks() {
         {/* CTA */}
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
+            href="https://wa.me/message/YJ74EWIKNVCGA1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-[#7A8C7E] font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#F5F0E8] transition-colors duration-300"

@@ -38,7 +38,7 @@ export default function CTABanner() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
+            href="https://wa.me/message/YJ74EWIKNVCGA1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#6B9B6B] font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#F9F8F6] transition-colors duration-300"

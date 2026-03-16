@@ -20,8 +20,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-body text-sm font-light text-white/50 leading-relaxed max-w-xs mb-5">
-              Sonhos, acolhimento & muito afeto. Cuidado em saúde mental online
-              para quem quer entender e transformar a própria história.
+              Sonhos, acolhimento & muito afeto.
             </p>
             {/* Social links */}
             <div className="flex gap-4">
@@ -39,7 +38,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/message/YJ74EWIKNVCGA1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 hover:text-white/80 transition-colors"
@@ -88,7 +87,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               <li>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/message/YJ74EWIKNVCGA1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-sm font-light text-white/50 hover:text-white/80 transition-colors"

@@ -33,11 +33,11 @@ const services = [
   {
     icon: Users,
     number: "03",
-    title: "Terapia em Grupo",
+    title: "Acolhimento Terapêutico",
     subtitle: "Você não está sozinho",
     description:
-      "Grupos temáticos com acompanhamento profissional e programa de sessões estruturado. Ouvir outras pessoas contando histórias parecidas com as suas pode ser um alívio enorme.",
-    tag: "Grupos temáticos",
+      "Aprofunde-se em um tema específico com um plano terapêutico claro e direcionado. Com feedbacks semanais, você acompanha seu progresso ao longo do tratamento, trabalhando cada questão no seu ritmo e com mais consciência sobre sua evolução.",
+    tag: "Plano terapêutico personalizado",
     highlight: false,
   },
   {
@@ -141,7 +141,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+agendar+${encodeURIComponent(service.title)}.`}
+          href={service.title === "Psicoterapia Individual" ? "http://bit.ly/4rwMSTN" : service.title === "Avaliação Neuropsicológica" ? "http://bit.ly/4tPDjR6" : service.title === "Acolhimento Terapêutico" ? "https://wa.me/message/YJ74EWIKNVCGA1" : "http://bit.ly/4aOYdqZ"}
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-colors duration-300 ${
@@ -150,7 +150,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
               : "bg-[#8FBF8F] text-white hover:bg-[#6B9B6B]"
           }`}
         >
-          Agendar {service.title.split(" ")[0]}
+          {service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Agendar"}
         </a>
       </div>
     </div>
@@ -213,7 +213,7 @@ export default function Services() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+saber+mais+sobre+os+serviços."
+            href="https://wa.me/message/YJ74EWIKNVCGA1"
             target="_blank"
             rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#6B9B6B] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A7B5A] transition-colors duration-300"

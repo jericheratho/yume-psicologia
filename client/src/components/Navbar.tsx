@@ -63,13 +63,15 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                className="font-body text-sm font-light tracking-wide text-[#4A4640] hover:text-[#7A8C7E] transition-colors duration-300"
+                className={`font-body text-sm font-light tracking-wide transition-colors duration-300 ${
+                  scrolled ? "text-[#7A8C7E] hover:text-[#6B9B6B]" : "text-white hover:text-[#ddf8e3]"
+                }`}
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
+              href="https://wa.me/message/YJ74EWIKNVCGA1"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
@@ -106,7 +108,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+mais+informações."
+          href="https://wa.me/message/YJ74EWIKNVCGA1"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 px-8 py-3 bg-[#8FBF8F] text-white font-body text-base font-medium tracking-wide rounded-sm"

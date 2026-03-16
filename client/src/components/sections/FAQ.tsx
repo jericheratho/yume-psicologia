@@ -102,12 +102,12 @@ export default function FAQ() {
               respondemos com prazer.
             </p>
             <a
-              href="https://wa.me/5511999999999?text=Olá%2C+tenho+uma+dúvida+sobre+os+serviços+da+Yume."
+              href="https://wa.me/message/YJ74EWIKNVCGA1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
-              Falar pelo WhatsApp
+              Fale Conosco
             </a>
           </div>
 
