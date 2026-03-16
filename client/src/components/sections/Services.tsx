@@ -121,7 +121,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           {service.title}
         </h3>
         <p
-          className={`font-body text-sm font-light leading-relaxed ${
+          className={`font-body text-base font-light leading-relaxed ${
             service.highlight ? "text-white/80" : "text-[#4A4640]"
           }`}
         >
@@ -130,7 +130,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       </div>
 
       {/* Tag */}
-      <div className="mt-5 pt-5 border-t border-current/10">
+      <div className="mt-5 pt-5 border-t border-current/10 flex flex-col gap-4">
         <span
           className={`font-body text-xs font-light tracking-wide ${
                service.highlight ? "text-white" : "text-[#8FBF8F]"
@@ -138,6 +138,20 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         >
           {service.tag}
         </span>
+        
+        {/* WhatsApp Button */}
+        <a
+          href={`https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+agendar+${encodeURIComponent(service.title)}.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-colors duration-300 ${
+            service.highlight
+              ? "bg-white text-[#8FBF8F] hover:bg-white/90"
+              : "bg-[#8FBF8F] text-white hover:bg-[#6B9B6B]"
+          }`}
+        >
+          Agendar {service.title.split(" ")[0]}
+        </a>
       </div>
     </div>
   );
@@ -161,7 +175,7 @@ export default function Services() {
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">Não é só terapia online.{" "}
               <em className="italic text-[#8FBF8F]">Deixa a gente te explicar.</em>
             </h2>
-            <p className="font-body text-sm font-light text-[#4A4640] max-w-xs leading-relaxed">
+            <p className="font-body text-base font-light text-[#4A4640] max-w-xs leading-relaxed">
               Cada modalidade foi pensada para atender um momento específico da
               sua história.
             </p>
