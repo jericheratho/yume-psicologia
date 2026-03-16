@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative container pb-24 pt-32 md:pt-0 md:pb-32">
+      <div className="relative container pb-24 pt-40 md:pt-20 md:pb-32">
         <div className="max-w-xl">
           {/* Eyebrow */}
           <div
