@@ -40,6 +40,8 @@ export default function Navbar() {
         }`}
       >
         <div className="container flex items-center justify-between h-16 md:h-20">
+          {/* Decorative line - hidden */}
+          <div className="hidden" />
           {/* Logo */}
           <a
             href="#inicio"
@@ -48,9 +50,9 @@ export default function Navbar() {
           >
             {/* Replace with your logo image */}
             <img
-              src="/logo.png"
+              src="https://image2url.com/r2/default/images/1773686578779-aae60c2f-dc93-4df5-9b54-80c8e4bdce98.png"
               alt="Yume Psicologia"
-              className="h-10 md:h-12 w-auto"
+              className="h-12 md:h-14 w-auto"
             />
           </a>
 
