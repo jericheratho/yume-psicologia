@@ -15,15 +15,10 @@ const CAROUSEL_IMAGES = [
 
 export default function AnimatedHeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
-        setIsTransitioning(false);
-      }, 500); // Fade duration
+      setCurrentIndex((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
     }, 5000); // 5 seconds per image
 
     return () => clearInterval(interval);
@@ -37,10 +32,8 @@ export default function AnimatedHeroCarousel() {
           key={index}
           src={image}
           alt={`Hero background ${index + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-            index === currentIndex && !isTransitioning
-              ? "opacity-100"
-              : "opacity-0"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
@@ -58,7 +51,6 @@ export default function AnimatedHeroCarousel() {
             key={index}
             onClick={() => {
               setCurrentIndex(index);
-              setIsTransitioning(false);
             }}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
