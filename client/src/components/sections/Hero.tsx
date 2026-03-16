@@ -5,6 +5,7 @@
    ============================================================ */
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
+import AnimatedHeroBackground from "../AnimatedHeroBackground";
 
 const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-hero-ZrWpfvbLkyoqBkkH5LJPqD.webp";
 
@@ -38,6 +39,11 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 md:via-white/60 to-transparent" />
         {/* Bottom gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      </div>
+
+      {/* Animated background words */}
+      <div className="absolute inset-0 md:right-0 md:w-[35%] flex items-center justify-center">
+        <AnimatedHeroBackground />
       </div>
 
       {/* Kanji 夢 decorative background element */}
