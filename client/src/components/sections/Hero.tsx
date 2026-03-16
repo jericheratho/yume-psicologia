@@ -35,7 +35,9 @@ export default function Hero() {
       >
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
-      {/* No overlay - video fully opaque */}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/20" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/50 to-transparent" />
 
       {/* Kanji 夢 decorative background element */}
       <div
@@ -59,7 +61,7 @@ export default function Hero() {
 
           {/* Main heading */}
           <h1
-            className={`font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[0.95] text-white mb-6 transition-all duration-700 delay-300 bg-black/40 px-4 py-2 w-fit ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-6 transition-all duration-700 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             E se a sua história
             <br />
@@ -105,7 +107,7 @@ export default function Hero() {
             {[
               { value: "100%", label: "Online" },
               { value: "+5 anos", label: "de experiência" },
-              { value: "2", label: "especialistas" },
+              { value: "2", label: "Profissionais especialistas" },
               { value: "+1500", label: "atendimentos em todo o Brasil" },
             ].map((stat) => (
               <div key={stat.label}>
