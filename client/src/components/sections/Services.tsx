@@ -1,0 +1,217 @@
+/* ============================================================
+   Services Section — Yume Psicologia
+   Style: Asymmetric grid, editorial cards with thin borders
+   ============================================================ */
+import { useRef, useEffect } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Brain, Users, Compass, ClipboardList } from "lucide-react";
+
+const THERAPY_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-therapy-k3TNWzqPvFJeZksvzMJsV5.webp";
+const GROUP_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-group-YPW5WVAh2XD3HzurKjvMWR.webp";
+
+const services = [
+  {
+    icon: Brain,
+    number: "01",
+    title: "Psicoterapia Individual",
+    subtitle: "Um espaço só seu",
+    description:
+      "Um espaço seguro para falar do que está pesado, entender seus padrões e começar a agir diferente. Acompanhamento psicológico estruturado para quem busca clareza, direção e mudança real.",
+    tag: "Gestalt-terapia · TCC",
+    highlight: true,
+  },
+  {
+    icon: ClipboardList,
+    number: "02",
+    title: "Avaliação Neuropsicológica",
+    subtitle: "Investigação com cuidado",
+    description:
+      "Investigação responsável e humanizada. Indicada para diagnóstico de TDAH, TEA, Altas Habilidades e outros, laudo clínico ou orientação especializada.",
+    tag: "TDAH · TEA · AH",
+    highlight: false,
+  },
+  {
+    icon: Users,
+    number: "03",
+    title: "Terapia em Grupo",
+    subtitle: "Você não está sozinho",
+    description:
+      "Grupos temáticos com acompanhamento profissional e programa de sessões estruturado. Ouvir outras pessoas contando histórias parecidas com as suas pode ser um alívio enorme.",
+    tag: "Grupos temáticos",
+    highlight: false,
+  },
+  {
+    icon: Compass,
+    number: "04",
+    title: "Orientação & Acompanhamento",
+    subtitle: "Direção em momentos difíceis",
+    description:
+      "Para momentos de decisão, crise ou situações específicas que precisam de direção. Indicado a profissionais e estudantes que buscam suporte pontual e qualificado.",
+    tag: "Profissionais · Estudantes",
+    highlight: false,
+  },
+];
+
+function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => el.classList.add("visible"), index * 100);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index]);
+
+  const Icon = service.icon;
+
+  return (
+    <div
+      ref={ref}
+      className={`fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
+        service.highlight
+          ? "bg-[#7A8C7E] border-[#7A8C7E] text-white"
+          : "bg-white/60 border-[#2C2A26]/10 hover:border-[#7A8C7E]/40"
+      }`}
+    >
+      {/* Number */}
+      <span
+        className={`font-display text-5xl font-light leading-none mb-4 ${
+          service.highlight ? "text-white/20" : "text-[#2C2A26]/10"
+        }`}
+      >
+        {service.number}
+      </span>
+
+      {/* Icon */}
+      <div
+        className={`w-10 h-10 flex items-center justify-center rounded-sm mb-5 ${
+          service.highlight ? "bg-white/20" : "bg-[#7A8C7E]/10"
+        }`}
+      >
+        <Icon
+          size={20}
+          strokeWidth={1.5}
+          className={service.highlight ? "text-white" : "text-[#7A8C7E]"}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1">
+        <p
+          className={`font-body text-xs font-light tracking-[0.2em] uppercase mb-1 ${
+            service.highlight ? "text-white/60" : "text-[#7A8C7E]"
+          }`}
+        >
+          {service.subtitle}
+        </p>
+        <h3
+          className={`font-display text-2xl font-medium mb-3 leading-tight ${
+            service.highlight ? "text-white" : "text-[#2C2A26]"
+          }`}
+        >
+          {service.title}
+        </h3>
+        <p
+          className={`font-body text-sm font-light leading-relaxed ${
+            service.highlight ? "text-white/80" : "text-[#4A4640]"
+          }`}
+        >
+          {service.description}
+        </p>
+      </div>
+
+      {/* Tag */}
+      <div className="mt-5 pt-5 border-t border-current/10">
+        <span
+          className={`font-body text-xs font-light tracking-wide ${
+            service.highlight ? "text-white/60" : "text-[#7A8C7E]"
+          }`}
+        >
+          {service.tag}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export default function Services() {
+  const headingRef = useScrollReveal(0.2) as React.RefObject<HTMLDivElement>;
+
+  return (
+    <section id="servicos" className="py-24 md:py-32 bg-[#F5F0E8]">
+      <div className="container">
+        {/* Section header */}
+        <div ref={headingRef} className="fade-up mb-16 md:mb-20">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-[#7A8C7E]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+              Nossos serviços
+            </span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">
+              Não é só terapia online.{" "}
+              <em className="italic text-[#7A8C7E]">Deixa a gente te explicar.</em>
+            </h2>
+            <p className="font-body text-sm font-light text-[#4A4640] max-w-xs leading-relaxed">
+              Cada modalidade foi pensada para atender um momento específico da
+              sua história.
+            </p>
+          </div>
+        </div>
+
+        {/* Services grid + image */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left: 2x2 services grid */}
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {services.map((service, i) => (
+              <ServiceCard key={service.number} service={service} index={i} />
+            ))}
+          </div>
+
+          {/* Right: image column */}
+          <div className="hidden lg:flex flex-col gap-6">
+            <div className="flex-1 overflow-hidden rounded-sm">
+              <img
+                src={THERAPY_IMAGE}
+                alt="Sessão de terapia online"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="flex-1 overflow-hidden rounded-sm">
+              <img
+                src={GROUP_IMAGE}
+                alt="Terapia em grupo online"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <a
+            href="https://wa.me/5511999999999?text=Olá%2C+vim+do+site+e+quero+saber+mais+sobre+os+serviços."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#C4896F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#A86E55] transition-colors duration-300"
+          >
+            Não sei qual serviço escolher — me ajude
+          </a>
+          <p className="font-body text-xs text-[#7A8C7E] mt-3">
+            Conversamos primeiro e indicamos o melhor formato para você.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

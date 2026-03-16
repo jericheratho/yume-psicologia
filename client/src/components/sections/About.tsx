@@ -1,0 +1,128 @@
+/* ============================================================
+   About Section — Yume Psicologia
+   Style: Asymmetric layout, abstract watercolor background
+   ============================================================ */
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
+const ABSTRACT_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-abstract-2c7WeuKHSgUwjHrLrYr9sn.webp";
+
+const values = [
+  {
+    title: "Elaborar",
+    description:
+      "Ter um espaço seguro para organizar o que está confuso, sem precisar dar conta de tudo sozinho.",
+  },
+  {
+    title: "Transformar",
+    description:
+      "Mudar os padrões depois que você entende o que sente. Mudança real, não só alívio temporário.",
+  },
+  {
+    title: "Acolher",
+    description:
+      "Um espaço de escuta, elaboração e transformação. Com clareza, ética e proximidade.",
+  },
+];
+
+export default function About() {
+  const headingRef = useScrollReveal(0.15) as React.RefObject<HTMLDivElement>;
+  const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
+  const valuesRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
+
+  return (
+    <section id="sobre" className="py-24 md:py-32 relative overflow-hidden bg-[#EDE6D8]">
+      {/* Abstract watercolor background */}
+      <div className="absolute inset-0 opacity-30">
+        <img
+          src={ABSTRACT_IMAGE}
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 bg-[#EDE6D8]/60" />
+
+      <div className="relative container">
+        {/* Section label */}
+        <div ref={headingRef} className="fade-up mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-[#7A8C7E]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#7A8C7E]">
+              Sobre a Yume
+            </span>
+          </div>
+        </div>
+
+        {/* Main content: asymmetric two-column */}
+        <div ref={contentRef} className="fade-up grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start mb-20">
+          {/* Left: large display text */}
+          <div className="lg:col-span-3">
+            <div className="relative">
+              {/* Kanji decoration */}
+              <span
+                className="absolute -top-8 -left-4 font-display text-[120px] leading-none text-[#2C2A26]/[0.06] select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                夢
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">
+                E se a sua história
+                <br />
+                <em className="italic text-[#7A8C7E]">não precisasse ser</em>
+                <br />
+                corrigida, mas{" "}
+                <em className="italic">elaborada?</em>
+              </h2>
+            </div>
+          </div>
+
+          {/* Right: body text */}
+          <div className="lg:col-span-2 flex flex-col gap-6 pt-2">
+            <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+              <strong className="font-medium text-[#2C2A26]">Yume</strong> significa{" "}
+              <em>"sonho"</em> em japonês e representa nosso objetivo de oferecer
+              cuidados em saúde mental de forma acessível, democrática e ampliada.
+            </p>
+            <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+              A Yume Psicologia nasceu com o compromisso de oferecer um cuidado
+              psicológico ético, acessível e empenhado com a singularidade de cada
+              pessoa. Acreditamos que cuidar da saúde mental é recuperar a
+              capacidade de projetar novos caminhos, mesmo em momentos difíceis.
+            </p>
+            <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+              Nosso diferencial está na forma como conduzimos cada atendimento:
+              com clareza, ética e proximidade. Um espaço profissional de cuidado —
+              acessível, responsável e centrado no desenvolvimento emocional.
+            </p>
+
+            {/* Accessibility note */}
+            <div className="mt-2 p-4 border border-[#7A8C7E]/30 bg-white/40 rounded-sm">
+              <p className="font-body text-xs font-light text-[#4A4640] leading-relaxed">
+                💚 Cuidado psicológico que cabe no seu bolso, com{" "}
+                <strong className="font-medium">planos sociais</strong> e opção de{" "}
+                <strong className="font-medium">reembolso</strong>. Verifique condições.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Values row */}
+        <div ref={valuesRef} className="stagger-children grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#2C2A26]/10">
+          {values.map((value, i) => (
+            <div
+              key={value.title}
+              className={`p-8 ${i < values.length - 1 ? "border-b md:border-b-0 md:border-r border-[#2C2A26]/10" : ""}`}
+            >
+              <h3 className="font-display text-2xl font-medium text-[#2C2A26] mb-3">
+                {value.title}
+              </h3>
+              <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+                {value.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
