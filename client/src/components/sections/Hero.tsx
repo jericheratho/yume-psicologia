@@ -105,7 +105,7 @@ export default function Hero() {
             {[
               { value: "100%", label: "Online" },
               { value: "+5 anos", label: "de experiência" },
-              { value: "2", label: "Profissionais" },
+              { value: "2", label: "especialistas" },
               { value: "+1500", label: "atendimentos em todo o Brasil" },
             ].map((stat) => (
               <div key={stat.label}>
