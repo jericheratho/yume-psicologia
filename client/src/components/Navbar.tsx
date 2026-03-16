@@ -46,14 +46,12 @@ export default function Navbar() {
             onClick={(e) => { e.preventDefault(); handleNavClick("#inicio"); }}
             className="flex items-center gap-2 group"
           >
-            <span className="font-display text-2xl md:text-3xl font-light tracking-wide text-[#2C2A26]">
-              Yume
-            </span>
-            <span
-              className="text-[10px] md:text-xs font-body font-light tracking-[0.25em] uppercase text-[#7A8C7E] mt-1"
-            >
-              Psicologia
-            </span>
+            {/* Replace with your logo image */}
+            <img
+              src="/logo.png"
+              alt="Yume Psicologia"
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}
