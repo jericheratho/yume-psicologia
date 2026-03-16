@@ -36,8 +36,8 @@ export default function Hero() {
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
       {/* White fade overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/25 to-white/10" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/40 to-transparent" />
 
       {/* Kanji 夢 decorative background element */}
       <div
