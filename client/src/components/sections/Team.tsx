@@ -52,23 +52,14 @@ export default function Team() {
           </h2>
         </div>
 
-        {/* Banner with both team members */}
-        <div ref={contentRef} className="fade-up mb-24 md:mb-32">
-          <div className="aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-sm">
-            <img
-              src={TEAM_IMAGE}
-              alt="Hanna Silva e Ezequias Alves - Yume Psicologia"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+
 
         {/* Team members - asymmetrical layout */}
         <div className="space-y-24 md:space-y-32">
           {team.map((member, index) => (
             <div key={member.name}>
               {/* Alternating layout: image left/right */}
-              <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${index === 1 ? "md:grid-cols-2" : ""}`}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12 bg-white rounded-sm shadow-lg ${index === 1 ? "md:grid-cols-2" : ""}`}>
                 {/* Image - left on odd, right on even */}
                 <div className={`${index === 1 ? "md:order-2" : ""}`}>
                   <div className="aspect-[3/4] overflow-hidden rounded-sm">
@@ -81,7 +72,7 @@ export default function Team() {
                 </div>
 
                 {/* Content - right on odd, left on even */}
-                <div className={`${index === 1 ? "md:order-1" : ""}`}>
+                <div className={`${index === 1 ? "md:order-1" : ""} flex flex-col justify-center`}>
                   {/* Name as large italic heading */}
                   <h3 className="font-display text-4xl md:text-5xl font-light italic text-[#2C2A26] mb-6">
                     {member.name}
