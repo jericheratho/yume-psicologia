@@ -114,7 +114,7 @@ export default function Footer() {
               {[
                 "Psicoterapia Individual",
                 "Avaliação Neuropsicológica",
-                "Terapia em Grupo",
+                "Acolhimento Psicológico",
                 "Orientação & Acompanhamento",
               ].map((item) => (
                 <li key={item}>
