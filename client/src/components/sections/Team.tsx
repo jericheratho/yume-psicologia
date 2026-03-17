@@ -126,7 +126,7 @@ export default function Team() {
                 {/* CTA */}
                 <div className="mt-5 pt-5 border-t border-[#2C2A26]/10">
                   <a
-                    href={`https://wa.me/5511999999999?text=Olá%2C+gostaria+de+agendar+uma+consulta+com+${encodeURIComponent(member.name)}.`}
+                    href="https://wa.me/message/YJ74EWIKNVCGA1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
@@ -143,7 +143,7 @@ export default function Team() {
                 Quer fazer parte do time de profissionais da Yume?
               </p>
               <a
-                href="mailto:contato@yumepsicologia.com.br"
+                href="mailto:yumepsicologia@gmail.com"
                 className="font-body text-sm font-medium text-[#7A8C7E] hover:text-[#5A6B5E] transition-colors"
               >
                 Candidate-se →
