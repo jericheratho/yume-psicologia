@@ -17,7 +17,15 @@ export default function Footer() {
               <img
                 src="https://image2url.com/r2/default/images/1773686578779-aae60c2f-dc93-4df5-9b54-80c8e4bdce98.png"
                 alt="Yume Psicologia"
-                className="h-12 w-auto"
+                className="h-20 w-auto brightness-0 invert"
+                style={{
+                  width: "218px",
+                  height: "85px",
+                  paddingRight: "8px",
+                  marginTop: "-6px",
+                  marginRight: "-17px",
+                  marginLeft: "-41px"
+                }}
               />
             </div>
             <p className="font-body text-sm font-light text-white/50 leading-relaxed max-w-xs mb-5">
@@ -150,14 +158,16 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6">
-              <h4 className="font-body text-xs font-medium tracking-[0.2em] uppercase text-white/40 mb-3">
-                Atendimento
-              </h4>
-              <p className="font-body text-sm font-light text-white/50">
-                100% Online · Brasil
-              </p>
-            </div>
+          </div>
+
+          {/* Atendimento - moved to Services column */}
+          <div>
+            <h4 className="font-body text-xs font-medium tracking-[0.2em] uppercase text-white/40 mb-3">
+              Atendimento
+            </h4>
+            <p className="font-body text-sm font-light text-white/50">
+              100% Online · Brasil
+            </p>
           </div>
         </div>
 
