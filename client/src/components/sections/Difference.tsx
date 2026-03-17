@@ -30,11 +30,11 @@ export default function Difference() {
   const cardsRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section className="py-20 md:py-32 bg-[#F5F3F0]">
+    <section className="py-20 md:py-32 bg-[#ecf0ea]">
       <div className="container">
         {/* Centered heading */}
-        <div ref={headingRef} className="text-center mb-16 md:mb-24">
-          <h2 className="font-display text-4xl md:text-6xl font-light text-[#2C2A26] leading-tight mb-6">
+        <div ref={headingRef} className="mb-16 md:mb-24">
+          <h2 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] leading-tight mb-6">
             Um cuidado que começa antes da <em className="italic text-[#8FBF8F] font-light">primeira sessão</em>
           </h2>
         </div>
@@ -44,13 +44,13 @@ export default function Difference() {
           {/* Subtitle paragraphs - centered */}
           <div className="max-w-3xl mx-auto mb-16 md:mb-20">
             <div className="space-y-5">
-              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed text-center">
+              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
                 Na Yume Psicologia, o acolhimento começa no primeiro contato. Você pode iniciar a conversa por <strong>ligação</strong>, <strong>videochamada</strong> ou <strong>WhatsApp</strong> — da forma que for mais confortável para você.
               </p>
-              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed text-center">
+              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
                 Após a primeira sessão, você recebe um <strong>Plano Terapêutico Individual</strong>, que apresenta com clareza os objetivos do tratamento e o caminho a ser percorrido.
               </p>
-              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed text-center">
+              <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
                 Durante o processo, você também conta com <strong>feedbacks semanais</strong>, acompanhando de forma clara sua evolução na terapia.
               </p>
             </div>
