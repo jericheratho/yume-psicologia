@@ -1,6 +1,7 @@
 /* ============================================================
    Team Section — Yume Psicologia
-   Style: Editorial portrait layout, warm tones
+   Style: Editorial asymmetrical layout, elegant spacing
+   Inspired by: Amelie's Advice about page
    ============================================================ */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -39,68 +40,102 @@ export default function Team() {
     <section id="equipe" className="py-24 md:py-32 bg-white">
       <div className="container">
         {/* Section header */}
-        <div ref={headingRef} className="fade-up mb-16 md:mb-20">
+        <div ref={headingRef} className="fade-up mb-20 md:mb-28">
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-[#8FBF8F]" />
             <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
               Nossa equipe
             </span>
           </div>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-lg leading-tight">Conheça quem vai{" "}
-              <em className="italic text-[#8FBF8F]">cuidar de você</em>
-            </h2>
-            <p className="font-body text-sm font-light text-[#4A4640] max-w-xs leading-relaxed">
-              Profissionais dedicados a entender a sua singularidade.
-            </p>
+          <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] max-w-2xl leading-tight">
+            Conheça quem vai <em className="italic text-[#8FBF8F]">cuidar de você</em>
+          </h2>
+        </div>
+
+        {/* Banner with both team members */}
+        <div ref={contentRef} className="fade-up mb-24 md:mb-32">
+          <div className="aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-sm">
+            <img
+              src={TEAM_IMAGE}
+              alt="Hanna Silva e Ezequias Alves - Yume Psicologia"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        {/* Team layout: image left, cards right */}
-        <div ref={contentRef} className="fade-up grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-          {/* Left: team photo */}
-          <div className="lg:col-span-2 relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-sm">
-              <img
-                src={TEAM_IMAGE}
-                alt="Equipe Yume Psicologia"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            {/* Decorative accent */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#8FBF8F]/20 rounded-sm -z-10" />
-          </div>
-
-          {/* Right: team cards */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="overflow-hidden rounded-sm border border-[#2C2A26]/10 hover:border-[#7A8C7E]/40 hover:shadow-md transition-all duration-300"
-              >
-                {/* Photo */}
-                {member.photo && (
-                  <div className="aspect-[3/2] overflow-hidden bg-[#f5f5f5]">
+        {/* Team members - asymmetrical layout */}
+        <div className="space-y-24 md:space-y-32">
+          {team.map((member, index) => (
+            <div key={member.name}>
+              {/* Alternating layout: image left/right */}
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${index === 1 ? "md:grid-cols-2" : ""}`}>
+                {/* Image - left on odd, right on even */}
+                <div className={`${index === 1 ? "md:order-2" : ""}`}>
+                  <div className="aspect-[3/4] overflow-hidden rounded-sm">
                     <img
                       src={member.photo}
                       alt={member.name}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                )}
+                </div>
 
-                {/* Content */}
-                <div className="p-7 bg-white/60">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="font-display text-2xl font-medium text-[#2C2A26]">
-                        {member.name}
-                      </h3>
-                      <p className="font-body text-sm font-light text-[#8FBF8F] mt-0.5">
-                        {member.role} · {member.crp}
-                      </p>
+                {/* Content - right on odd, left on even */}
+                <div className={`${index === 1 ? "md:order-1" : ""}`}>
+                  {/* Name as large italic heading */}
+                  <h3 className="font-display text-4xl md:text-5xl font-light italic text-[#2C2A26] mb-6">
+                    {member.name}
+                  </h3>
+
+                  {/* Role and credentials */}
+                  <div className="mb-8">
+                    <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide uppercase mb-1">
+                      {member.role}
+                    </p>
+                    <p className="font-body text-xs font-light text-[#8FBF8F]/70">
+                      {member.crp}
+                    </p>
+                  </div>
+
+                  {/* Approach tag */}
+                  <div className="mb-8">
+                    <span className="inline-block px-4 py-2 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-xs font-light tracking-wide rounded-sm">
+                      {member.approach}
+                    </span>
+                  </div>
+
+                  {/* Bio */}
+                  <p className="font-body text-base font-light text-[#4A4640] leading-relaxed mb-8">
+                    {member.bio}
+                  </p>
+
+                  {/* Specialties */}
+                  <div className="mb-8">
+                    <p className="font-body text-xs font-light text-[#8FBF8F] tracking-wide uppercase mb-3">
+                      Especialidades
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {member.specialties.map((s) => (
+                        <span
+                          key={s}
+                          className="px-3 py-1.5 border border-[#2C2A26]/10 text-[#4A4640] font-body text-xs font-light rounded-sm"
+                        >
+                          {s}
+                        </span>
+                      ))}
                     </div>
+                  </div>
+
+                  {/* CTA and social */}
+                  <div className="flex items-center gap-6 pt-6 border-t border-[#2C2A26]/10">
+                    <a
+                      href="https://wa.me/message/YJ74EWIKNVCGA1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
+                    >
+                      Agendar consulta →
+                    </a>
                     <a
                       href={member.instagram}
                       target="_blank"
@@ -115,58 +150,30 @@ export default function Team() {
                       </svg>
                     </a>
                   </div>
-
-                  {/* Approach tag */}
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-xs font-light tracking-wide rounded-sm">
-                      {member.approach}
-                    </span>
-                  </div>
-
-                  {/* Bio */}
-                  <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-5">
-                    {member.bio}
-                  </p>
-
-                  {/* Specialties */}
-                  <div className="flex flex-wrap gap-2">
-                    {member.specialties.map((s) => (
-                      <span
-                        key={s}
-                        className="px-2.5 py-1 border border-[#2C2A26]/10 text-[#4A4640] font-body text-xs font-light rounded-sm"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="mt-5 pt-5 border-t border-[#2C2A26]/10">
-                    <a
-                      href="https://wa.me/message/YJ74EWIKNVCGA1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
-                    >
-                      Falar com {member.name.split(" ")[0]} →
-                    </a>
-                  </div>
                 </div>
               </div>
-            ))}
-
-            {/* Join the team */}
-            <div className="p-6 border border-dashed border-[#7A8C7E]/40 rounded-sm text-center">
-              <p className="font-body text-sm font-light text-[#4A4640] mb-3">
-                Quer fazer parte do time de profissionais da Yume?
-              </p>
-              <a
-                href="mailto:yumepsicologia@gmail.com"
-                className="font-body text-sm font-medium text-[#7A8C7E] hover:text-[#5A6B5E] transition-colors"
-              >
-                Candidate-se →
-              </a>
             </div>
+          ))}
+        </div>
+
+        {/* Join the team section */}
+        <div className="mt-24 md:mt-32 pt-24 md:pt-32 border-t border-[#2C2A26]/10">
+          <div className="max-w-2xl">
+            <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide uppercase mb-4">
+              Quer fazer parte do time?
+            </p>
+            <h3 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] mb-6">
+              Estamos sempre buscando profissionais dedicados
+            </h3>
+            <p className="font-body text-base font-light text-[#4A4640] mb-8">
+              Se você é um profissional de saúde mental apaixonado por fazer a diferença, gostaríamos de ouvir você.
+            </p>
+            <a
+              href="mailto:yumepsicologia@gmail.com"
+              className="inline-block px-6 py-3 bg-[#8FBF8F] text-white font-body text-sm font-light hover:bg-[#6B9B6B] transition-colors rounded-sm"
+            >
+              Candidate-se →
+            </a>
           </div>
         </div>
       </div>
