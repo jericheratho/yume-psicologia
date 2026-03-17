@@ -39,10 +39,10 @@ export default function Difference() {
           </h2>
         </div>
 
-        {/* Content section with image and text */}
+        {/* Content section with image and text side-by-side */}
         <div ref={contentRef} className="mb-20 md:mb-32">
-          {/* Subtitle paragraphs - centered */}
-          <div className="max-w-3xl mx-auto mb-16 md:mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text content - left side */}
             <div className="space-y-5">
               <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
                 Na Yume Psicologia, o acolhimento começa no primeiro contato. Você pode iniciar a conversa por <strong>ligação</strong>, <strong>videochamada</strong> ou <strong>WhatsApp</strong> — da forma que for mais confortável para você.
@@ -54,19 +54,19 @@ export default function Difference() {
                 Durante o processo, você também conta com <strong>feedbacks semanais</strong>, acompanhando de forma clara sua evolução na terapia.
               </p>
             </div>
-          </div>
 
-          {/* Central video call image */}
-          <div ref={imageRef} className="flex justify-center mb-16 md:mb-20">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
-              alt="Video call interface"
-              className="max-w-2xl w-full h-auto"
-            />
+            {/* Video call image - right side */}
+            <div ref={imageRef} className="flex justify-center">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
+                alt="Video call interface"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* CTA Button - centered */}
-          <div className="flex justify-center mb-20 md:mb-24">
+          <div className="flex justify-center mb-20 md:mb-24 mt-8 md:mt-12">
             <a
               href="#servicos"
               onClick={(e) => {

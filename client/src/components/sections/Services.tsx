@@ -191,23 +191,7 @@ export default function Services() {
             ))}
           </div>
 
-          {/* Right: image column */}
-          <div className="hidden lg:flex flex-col gap-6">
-            <div className="flex-1 overflow-hidden rounded-sm">
-              <img
-                src={THERAPY_IMAGE}
-                alt="Sessão de terapia online"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="flex-1 overflow-hidden rounded-sm">
-              <img
-                src={GROUP_IMAGE}
-                alt="Terapia em grupo online"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          </div>
+
         </div>
 
         {/* CTA */}

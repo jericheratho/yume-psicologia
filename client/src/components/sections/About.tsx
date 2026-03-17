@@ -56,19 +56,7 @@ export default function About() {
 
         {/* Main content: asymmetric two-column */}
         <div ref={contentRef} className="fade-up grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start mb-20 relative">
-          {/* Background image - fading to right */}
-          <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none hidden lg:block">
-            <div className="relative w-full h-full">
-              <img
-                src={VIDEO_CALL_IMAGE}
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover opacity-40"
-              />
-              {/* Gradient fade to left */}
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#e2e7d9]" />
-            </div>
-          </div>
+  
 
           {/* Left: large display text */}
           <div className="lg:col-span-3 relative z-10">
