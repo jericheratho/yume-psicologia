@@ -182,10 +182,10 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Services grid + image */}
+        {/* Services grid + image - align all 4 boxes in a row */}
         <div className="flex justify-center">
-          {/* 2x2 services grid - centered */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+          {/* 4 services in one row - centered */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl">
             {services.map((service, i) => (
               <ServiceCard key={service.number} service={service} index={i} />
             ))}
