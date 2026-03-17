@@ -76,7 +76,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="px-5 py-2 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
-              Agendar consulta
+              Quero ser acolhido(a)
             </a>
           </nav>
 

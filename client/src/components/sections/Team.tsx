@@ -62,11 +62,11 @@ export default function Team() {
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12 bg-white rounded-sm shadow-lg ${index === 1 ? "md:grid-cols-2" : ""}`}>
                 {/* Image - left on odd, right on even */}
                 <div className={`${index === 1 ? "md:order-2" : ""} flex justify-center md:justify-start`}>
-                  <div className="w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-2xl shadow-md">
+                  <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-2xl shadow-md flex-shrink-0">
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 brightness-110 contrast-110"
+                      className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 brightness-120 contrast-125"
                     />
                   </div>
                 </div>
