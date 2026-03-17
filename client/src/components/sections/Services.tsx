@@ -150,7 +150,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
               : "bg-[#8FBF8F] text-white hover:bg-[#6B9B6B]"
           }`}
         >
-          {service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Agendar"}
+          {service.title === "Psicoterapia Individual" ? "Agendar uma sessão individual" : service.title === "Avaliação Neuropsicológica" ? "Conheça a Avaliação" : service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Solicitar orçamento"}
         </a>
       </div>
     </div>
