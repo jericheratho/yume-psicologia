@@ -61,12 +61,12 @@ export default function Team() {
               {/* Alternating layout: image left/right */}
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12 bg-white rounded-sm shadow-lg ${index === 1 ? "md:grid-cols-2" : ""}`}>
                 {/* Image - left on odd, right on even */}
-                <div className={`${index === 1 ? "md:order-2" : ""}`}>
-                  <div className="aspect-[3/4] overflow-hidden rounded-sm">
+                <div className={`${index === 1 ? "md:order-2" : ""} flex justify-center md:justify-start`}>
+                  <div className="w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-2xl shadow-md">
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 brightness-110 contrast-110"
                     />
                   </div>
                 </div>
