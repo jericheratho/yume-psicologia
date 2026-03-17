@@ -13,11 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-display text-3xl font-light text-white">Yume</span>
-              <span className="text-[10px] font-body font-light tracking-[0.25em] uppercase text-white/40 mt-1">
-                Psicologia
-              </span>
+            <div className="mb-4">
+              <img
+                src="https://image2url.com/r2/default/images/1773686578779-aae60c2f-dc93-4df5-9b54-80c8e4bdce98.png"
+                alt="Yume Psicologia"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="font-body text-sm font-light text-white/50 leading-relaxed max-w-xs mb-5">
               Sonhos, acolhimento & muito afeto.
