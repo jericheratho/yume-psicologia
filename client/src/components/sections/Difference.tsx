@@ -40,7 +40,7 @@ export default function Difference() {
         {/* Main content */}
         <div ref={contentRef} className="fade-up mb-16 md:mb-24 max-w-3xl">
           <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed mb-6">
-            Na Yume Psicologia, o acolhimento começa no primeiro contato. Você pode iniciar a conversa por ligação, videochamada ou WhatsApp — da forma que for mais confortável para você.
+            Na Yume Psicologia, o acolhimento começa no primeiro contato. Você pode iniciar a conversa por <strong>ligação</strong>, <strong>videochamada</strong> ou <strong>WhatsApp</strong> — da forma que for mais confortável para você.
           </p>
           <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed mb-6">
             Após a primeira sessão, você recebe um Plano Terapêutico Individual, que apresenta com clareza os objetivos do tratamento e o caminho a ser percorrido.
@@ -53,7 +53,7 @@ export default function Difference() {
         {/* Differentials section */}
         <div ref={differentialsRef} className="fade-up mb-12">
           <h3 className="font-display text-2xl md:text-3xl font-light text-[#2C2A26] mb-10">
-            Diferenciais da Yume
+            O <em className="italic text-[#8FBF8F] font-light">Cuidado</em> na Yume:
           </h3>
 
           {/* Three column grid */}
