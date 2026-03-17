@@ -55,12 +55,16 @@ export default function Difference() {
               </p>
             </div>
 
-            {/* Video call image - right side */}
+            {/* Video call image - right side with interaction effect */}
             <div ref={imageRef} className="flex justify-center">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
                 alt="Video call interface"
-                className="w-full h-auto"
+                className="w-full h-auto animate-pulse"
+                style={{
+                  filter: 'drop-shadow(0 0 20px rgba(143, 191, 143, 0.4))',
+                  animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                }}
               />
             </div>
           </div>
@@ -75,7 +79,7 @@ export default function Difference() {
               }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#8FBF8F] text-white font-body font-medium rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
             >
-              Saiba mais sobre nossos serviços ↓
+              Nossos serviços ↓
             </a>
           </div>
         </div>
