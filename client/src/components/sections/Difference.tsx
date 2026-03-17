@@ -59,7 +59,7 @@ export default function Difference() {
           {/* Central video call image */}
           <div ref={imageRef} className="flex justify-center mb-16 md:mb-20">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_1b2f3c4d.png"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
               alt="Video call interface"
               className="max-w-2xl w-full h-auto"
             />
