@@ -5,6 +5,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ABSTRACT_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-abstract-2c7WeuKHSgUwjHrLrYr9sn.webp";
+const VIDEO_CALL_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_37c4fd57.png";
 
 const values = [
   {
@@ -54,9 +55,23 @@ export default function About() {
         </div>
 
         {/* Main content: asymmetric two-column */}
-        <div ref={contentRef} className="fade-up grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start mb-20">
+        <div ref={contentRef} className="fade-up grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start mb-20 relative">
+          {/* Background image - fading to right */}
+          <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none hidden lg:block">
+            <div className="relative w-full h-full">
+              <img
+                src={VIDEO_CALL_IMAGE}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover opacity-40"
+              />
+              {/* Gradient fade to left */}
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#e2e7d9]" />
+            </div>
+          </div>
+
           {/* Left: large display text */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 relative z-10">
             <div className="relative">
               {/* Kanji decoration */}
               <span
@@ -76,7 +91,7 @@ export default function About() {
           </div>
 
           {/* Right: body text */}
-          <div className="lg:col-span-2 flex flex-col gap-6 pt-2">
+          <div className="lg:col-span-2 flex flex-col gap-6 pt-2 relative z-10">
             <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
               <strong className="font-medium text-[#2C2A26]">Yume</strong> significa{" "}
               <em>"sonho"</em> em japonês e representa nosso objetivo de oferecer
