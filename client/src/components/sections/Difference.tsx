@@ -97,7 +97,7 @@ export default function Difference() {
             {differentials.map((diff, index) => (
               <div
                 key={diff.title}
-                className="group relative p-8 md:p-10 bg-gradient-to-br from-[#F9F8F6] to-[#F5F3F0] rounded-2xl border border-[#E8E5E0] hover:border-[#8FBF8F] hover:shadow-xl transition-all duration-300"
+                className="group relative p-8 md:p-10 bg-gradient-to-br from-[#E8F5E8] to-[#D9ECDA] rounded-2xl border border-[#C5E0C5] hover:border-[#8FBF8F] hover:shadow-xl transition-all duration-300"
               >
                 {/* Icon */}
                 <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
