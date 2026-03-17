@@ -108,21 +108,23 @@ export default function About() {
           </div>
         </div>
 
-        {/* Values row */}
-        <div ref={valuesRef} className="stagger-children grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#2C2A26]/10">
-          {values.map((value, i) => (
-            <div
-              key={value.title}
-              className={`p-8 ${i < values.length - 1 ? "border-b md:border-b-0 md:border-r border-[#2C2A26]/10" : ""}`}
-            >
-              <h3 className="font-display text-2xl font-medium text-[#2C2A26] mb-3">
-                {value.title}
-              </h3>
-              <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
-                {value.description}
-              </p>
-            </div>
-          ))}
+        {/* Values cards - centered grid */}
+        <div ref={valuesRef} className="stagger-children flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
+            {values.map((value, i) => (
+              <div
+                key={value.title}
+                className="p-8 md:p-10 bg-white rounded-2xl shadow-lg border border-[#8FBF8F]/20 hover:shadow-xl hover:border-[#8FBF8F]/40 transition-all duration-300"
+              >
+                <h3 className="font-display text-2xl font-medium text-[#2C2A26] mb-3">
+                  {value.title}
+                </h3>
+                <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
