@@ -4,7 +4,9 @@
    ============================================================ */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const TEAM_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-team-8qyLoH2jgVXYBmPiwquYGZ.webp";
+const TEAM_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia_9413ce0b.webp";
+const HANNA_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/image_3be8b5f2.png";
+const EZEQUIAS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/IMG_4686_3bf22361.jpg";
 
 const team = [
   {
@@ -15,6 +17,7 @@ const team = [
     bio: "Psicóloga com sólida experiência clínica em atendimentos online, fundamentada na Gestalt-terapia e em formação avançada em TCC, com atuação voltada a adultos e idosos, especialmente em demandas como luto, ansiedade e relações interpessoais.",
     specialties: ["Luto", "Ansiedade", "Relações interpessoais", "Adultos e idosos"],
     instagram: "https://www.instagram.com/psihannacsillva/",
+    photo: HANNA_IMAGE,
   },
   {
     name: "Ezequias Alves",
@@ -24,6 +27,7 @@ const team = [
     bio: "Neuropsicólogo e especialista em Saúde Mental, com atuação em avaliação neuropsicológica, psicoterapia e perícias judiciais. Mestrando em Cultura e Sociedade na UFBA, desenvolvendo pesquisa sobre corpo, estética, literatura, processos psicossociais e subjetividade.",
     specialties: ["Avaliação Neuropsicológica", "TDAH", "TEA", "Perícias judiciais"],
     instagram: "https://www.instagram.com/ezequiaspsi/",
+    photo: EZEQUIAS_IMAGE,
   },
 ];
 
@@ -72,67 +76,81 @@ export default function Team() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="p-7 bg-white/60 border border-[#2C2A26]/10 hover:border-[#7A8C7E]/40 hover:shadow-md transition-all duration-300 rounded-sm"
+                className="overflow-hidden rounded-sm border border-[#2C2A26]/10 hover:border-[#7A8C7E]/40 hover:shadow-md transition-all duration-300"
               >
-                {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-display text-2xl font-medium text-[#2C2A26]">
-                      {member.name}
-                    </h3>
-                    <p className="font-body text-sm font-light text-[#8FBF8F] mt-0.5">
-                      {member.role} · {member.crp}
-                    </p>
+                {/* Photo */}
+                {member.photo && (
+                  <div className="aspect-[3/2] overflow-hidden bg-[#f5f5f5]">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
                   </div>
-                  <a
-                    href={member.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors"
-                    aria-label={`Instagram de ${member.name}`}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                      <circle cx="12" cy="12" r="4"/>
-                      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-                    </svg>
-                  </a>
-                </div>
+                )}
 
-                {/* Approach tag */}
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-xs font-light tracking-wide rounded-sm">
-                    {member.approach}
-                  </span>
-                </div>
-
-                {/* Bio */}
-                <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-5">
-                  {member.bio}
-                </p>
-
-                {/* Specialties */}
-                <div className="flex flex-wrap gap-2">
-                  {member.specialties.map((s) => (
-                    <span
-                      key={s}
-                      className="px-2.5 py-1 border border-[#2C2A26]/10 text-[#4A4640] font-body text-xs font-light rounded-sm"
+                {/* Content */}
+                <div className="p-7 bg-white/60">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="font-display text-2xl font-medium text-[#2C2A26]">
+                        {member.name}
+                      </h3>
+                      <p className="font-body text-sm font-light text-[#8FBF8F] mt-0.5">
+                        {member.role} · {member.crp}
+                      </p>
+                    </div>
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors"
+                      aria-label={`Instagram de ${member.name}`}
                     >
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                      </svg>
+                    </a>
+                  </div>
 
-                {/* CTA */}
-                <div className="mt-5 pt-5 border-t border-[#2C2A26]/10">
-                  <a
-                    href="https://wa.me/message/YJ74EWIKNVCGA1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
-                  >
-                    Falar com {member.name.split(" ")[0]} →
-                  </a>
+                  {/* Approach tag */}
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-xs font-light tracking-wide rounded-sm">
+                      {member.approach}
+                    </span>
+                  </div>
+
+                  {/* Bio */}
+                  <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-5">
+                    {member.bio}
+                  </p>
+
+                  {/* Specialties */}
+                  <div className="flex flex-wrap gap-2">
+                    {member.specialties.map((s) => (
+                      <span
+                        key={s}
+                        className="px-2.5 py-1 border border-[#2C2A26]/10 text-[#4A4640] font-body text-xs font-light rounded-sm"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="mt-5 pt-5 border-t border-[#2C2A26]/10">
+                    <a
+                      href="https://wa.me/message/YJ74EWIKNVCGA1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body text-sm font-light text-[#8FBF8F] hover:text-[#6B9B6B] transition-colors underline underline-offset-4"
+                    >
+                      Falar com {member.name.split(" ")[0]} →
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
