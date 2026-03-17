@@ -218,7 +218,7 @@ export default function Services() {
             rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#6B9B6B] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#5A7B5A] transition-colors duration-300"
           >
-            Não sei qual serviço escolher — me ajude
+            Não sei qual serviço escolher, me ajude
           </a>
           <p className="font-body text-xs text-[#8FBF8F] mt-3">
             Conversamos primeiro e indicamos o melhor formato para você.
