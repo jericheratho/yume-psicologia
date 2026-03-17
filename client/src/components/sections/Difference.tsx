@@ -34,7 +34,7 @@ export default function Difference() {
       <div className="container">
         {/* Centered heading */}
         <div ref={headingRef} className="mb-16 md:mb-24">
-          <h2 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] leading-tight mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] leading-tight mb-6">
             Um cuidado que começa antes da <em className="italic text-[#8FBF8F] font-light">primeira sessão</em>
           </h2>
         </div>
@@ -84,7 +84,7 @@ export default function Difference() {
         <div ref={cardsRef} className="max-w-4xl mx-auto">
           {/* Section heading */}
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] mb-3">
+            <h3 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] mb-3">
               O <em className="italic text-[#8FBF8F] font-light">Cuidado</em> na Yume:
             </h3>
             <p className="font-body text-base md:text-lg font-light text-[#4A4640]">
