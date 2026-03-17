@@ -5,6 +5,7 @@
    ============================================================ */
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
+import Difference from "@/components/sections/Difference";
 import Services from "@/components/sections/Services";
 import About from "@/components/sections/About";
 import Team from "@/components/sections/Team";
@@ -19,6 +20,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <Difference />
       <Services />
       <About />
       <Team />
