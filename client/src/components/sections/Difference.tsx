@@ -28,8 +28,16 @@ export default function Difference() {
   const differentialsRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   return (
-    <section className="py-24 md:py-32 bg-[#F9F8F6]">
-      <div className="container">
+    <section className="py-24 md:py-32 bg-[#F9F8F6] relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-60 md:opacity-40 pointer-events-none">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/difference-section-bg-bBM86Jsb3Q6AnMGvEMcmv2.webp"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="container relative z-10">
         {/* Section header */}
         <div ref={headingRef} className="fade-up mb-16 md:mb-20">
           <h2 className="font-display text-4xl md:text-5xl font-light text-[#2C2A26] leading-tight max-w-3xl mb-6">
