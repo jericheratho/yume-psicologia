@@ -80,7 +80,7 @@ export default function Difference() {
       </div>
 
       {/* Differentials section - new background color */}
-      <div ref={cardsRef} className="py-24 md:py-32 bg-white">
+      <div ref={cardsRef} className="pt-16 md:pt-16 pb-11 md:pb-11 bg-white">
         <div className="container">
           {/* Section heading */}
           <div className="mb-16 md:mb-20">
