@@ -50,11 +50,11 @@ export default function Team() {
           </h2>
         </div>
 
-        {/* Team cards grid - side by side layout */}
+        {/* Team cards grid - side by side layout - my info and hanna's columns need be fully aligned: the green buttons, the "especialidades" section, everything */}
         <div ref={contentRef} className="fade-up w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {team.map((member) => (
-              <div key={member.name} className="flex flex-col">
+              <div key={member.name} className="flex flex-col h-full">
                 {/* Title and subtitle */}
                 <div className="mb-8">
                   <h3 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] mb-2 leading-tight">
