@@ -1,6 +1,6 @@
 /* ============================================================
    Team Section — Yume Psicologia
-   Style: Clean card layout with rounded corners, sage green accents
+   Style: Side-by-side card layout with photos, clean typography
    ============================================================ */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -50,54 +50,34 @@ export default function Team() {
           </h2>
         </div>
 
-        {/* Team cards grid */}
-        <div ref={contentRef} className="fade-up flex flex-col items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl w-full">
-          {team.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col relative"
-            >
-              {/* Instagram icon - top right corner */}
-              <a
-                href={member.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-md"
-                title="Instagram"
-              >
-                <svg className="w-5 h-5 text-[#8FBF8F]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
-                </svg>
-              </a>
-
-              {/* Photo section with rounded top corners */}
-              <div className="aspect-square overflow-hidden bg-gray-100">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Name banner - sage green background */}
-              <div className="bg-[#8FBF8F] px-6 py-6 text-center">
-                <h3 className="font-display text-2xl md:text-3xl font-light text-white">
-                  {member.name}
-                </h3>
-              </div>
-
-              {/* Content section */}
-              <div className="flex-1 p-6 md:p-8 flex flex-col">
-                {/* CRP and role */}
-                <div className="mb-6">
-                  <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide mb-1">
-                    {member.crp}
-                  </p>
-                  <p className="font-body text-sm font-light text-[#4A4640]">
+        {/* Team cards grid - side by side layout */}
+        <div ref={contentRef} className="fade-up w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {team.map((member) => (
+              <div key={member.name} className="flex flex-col">
+                {/* Title and subtitle */}
+                <div className="mb-8">
+                  <h3 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] mb-2 leading-tight">
+                    {member.name}
+                  </h3>
+                  <p className="font-body text-lg font-light text-[#8FBF8F]">
                     {member.role}
                   </p>
                 </div>
+
+                {/* Photo with rounded corners */}
+                <div className="mb-8 rounded-3xl overflow-hidden shadow-lg h-96 lg:h-[480px]">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* CRP */}
+                <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide mb-4">
+                  {member.crp}
+                </p>
 
                 {/* Bio description */}
                 <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-6">
@@ -105,7 +85,7 @@ export default function Team() {
                 </p>
 
                 {/* Specialties */}
-                <div className="mb-6">
+                <div className="mb-8">
                   <p className="font-body text-xs font-medium text-[#8FBF8F] tracking-wide uppercase mb-3">
                     Especialidades
                   </p>
@@ -121,20 +101,30 @@ export default function Team() {
                   </div>
                 </div>
 
-                {/* CTA button */}
-                <div className="mt-auto">
+                {/* CTA buttons */}
+                <div className="flex gap-3">
                   <a
                     href="https://wa.me/message/YJ74EWIKNVCGA1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 bg-[#8FBF8F] text-white font-body text-sm font-medium rounded-lg hover:bg-[#6B9B6B] transition-colors duration-300 text-center"
+                    className="flex-1 px-4 py-3 bg-[#8FBF8F] text-white font-body text-sm font-medium rounded-lg hover:bg-[#6B9B6B] transition-colors duration-300 text-center"
                   >
                     {member.name === "Hanna Silva" ? "Falar com Hanna" : "Falar com Ezequias"}
                   </a>
+                  <a
+                    href={member.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 bg-[#8FBF8F]/10 text-[#8FBF8F] font-body text-sm font-medium rounded-lg hover:bg-[#8FBF8F]/20 transition-colors duration-300 flex items-center justify-center"
+                    title="Instagram"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
+                    </svg>
+                  </a>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
 
