@@ -4,8 +4,8 @@
    ============================================================ */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const HANNA_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/image_c7eaa558.png";
-const EZEQUIAS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/IMG_4686_f49fce05.jpg";
+const HANNA_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/1_4320cbef.webp";
+const EZEQUIAS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/2_9242878d.webp";
 
 const team = [
   {
