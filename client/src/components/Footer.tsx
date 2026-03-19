@@ -156,18 +156,12 @@ export default function Footer() {
                   yumepsicologia@gmail.com
                 </a>
               </li>
+              <li>
+                <p className="font-body text-sm font-light text-white/50">
+                  100% Online · Brasil
+                </p>
+              </li>
             </ul>
-
-          </div>
-
-          {/* Atendimento - moved to Services column */}
-          <div>
-            <h4 className="font-body text-xs font-medium tracking-[0.2em] uppercase text-white/40 mb-3">
-              Atendimento
-            </h4>
-            <p className="font-body text-sm font-light text-white/50">
-              100% Online · Brasil
-            </p>
           </div>
         </div>
 
