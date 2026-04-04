@@ -10,7 +10,7 @@ import Services from "@/components/sections/Services";
 import About from "@/components/sections/About";
 import Team from "@/components/sections/Team";
 import Booking from "@/components/sections/Booking";
-import HowItWorks from "@/components/sections/HowItWorks";
+
 import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import CTABanner from "@/components/sections/CTABanner";
@@ -26,7 +26,7 @@ export default function Home() {
       <About />
       <Team />
       <Booking />
-      <HowItWorks />
+
       <Testimonials />
       <FAQ />
       <CTABanner />
