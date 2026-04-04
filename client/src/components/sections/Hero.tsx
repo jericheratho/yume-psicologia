@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 
-const HERO_VIDEO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/Untitleddesign_3da374c0.mp4";
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/header-therapy-session-oFQykXYLT9rXHe882AfpSh.webp";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -25,19 +25,15 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-end overflow-hidden"
     >
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* Image background */}
+      <img
+        src={HERO_IMAGE}
+        alt="Therapeutic session with brown woman and therapist"
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={HERO_VIDEO} type="video/mp4" />
-      </video>
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/20" />
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/50 to-transparent" />
+      />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/40 to-transparent" />
 
       {/* Kanji 夢 decorative background element */}
       <div
