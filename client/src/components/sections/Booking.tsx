@@ -1,6 +1,6 @@
 /* ============================================================
    Booking Section — Yume Psicologia
-   Style: Green background with minimal, integrated Setmore calendar
+   Style: Green background with Setmore FancyBox popup
    ============================================================ */
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useEffect } from "react";
@@ -10,15 +10,24 @@ export default function Booking() {
   const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
   useEffect(() => {
-    // Load Setmore widget script
-    const script = document.createElement("script");
-    script.src = "https://yumepsicologia.setmore.com/static/js/iframe.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Load jQuery first
+    const jqueryScript = document.createElement("script");
+    jqueryScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js";
+    jqueryScript.async = true;
+    document.head.appendChild(jqueryScript);
+
+    jqueryScript.onload = () => {
+      // Load Setmore FancyBox script
+      const setmoreScript = document.createElement("script");
+      setmoreScript.src = "/setmoreFancyBox.js";
+      setmoreScript.async = true;
+      document.body.appendChild(setmoreScript);
+    };
 
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+      // Cleanup
+      if (document.head.contains(jqueryScript)) {
+        document.head.removeChild(jqueryScript);
       }
     };
   }, []);
@@ -43,23 +52,18 @@ export default function Booking() {
           </p>
         </div>
 
-        {/* Setmore Calendar Widget - Minimal Style */}
-        <div ref={contentRef} className="fade-up">
-          <div className="max-w-4xl mx-auto">
-            {/* Setmore Iframe with custom styling */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-xl">
-              <iframe
-                src="https://yumepsicologia.setmore.com/"
-                style={{
-                  width: "100%",
-                  height: "700px",
-                  border: "none",
-                }}
-                title="Setmore Booking Calendar"
-                allow="payment"
-              />
-            </div>
-          </div>
+        {/* Setmore Booking Button with FancyBox Popup */}
+        <div ref={contentRef} className="fade-up flex justify-center">
+          <a
+            id="Setmore_button_iframe"
+            href="https://yumepsicologia.setmore.com/"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#8FBF8F] font-display text-lg font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Agendar agora
+          </a>
         </div>
 
         {/* Alternative booking methods */}
@@ -99,14 +103,14 @@ export default function Booking() {
           <div className="text-center p-6">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <h3 className="font-display text-lg font-light text-white mb-2">
               Calendário
             </h3>
             <p className="font-body text-sm font-light text-white/80">
-              Veja a disponibilidade acima
+              Clique no botão acima para agendar
             </p>
           </div>
         </div>
