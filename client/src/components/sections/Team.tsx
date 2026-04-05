@@ -60,6 +60,9 @@ export default function Team() {
                   <h3 className="font-display text-3xl md:text-4xl font-light text-[#2C2A26] mb-2 leading-tight">
                     {member.name}
                   </h3>
+                  <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide mb-1">
+                    {member.crp}
+                  </p>
                   <p className="font-body text-lg font-light text-[#8FBF8F]">
                     {member.role}
                   </p>
@@ -74,10 +77,7 @@ export default function Team() {
                   />
                 </div>
 
-                {/* CRP */}
-                <p className="font-body text-sm font-light text-[#8FBF8F] tracking-wide mb-4">
-                  {member.crp}
-                </p>
+
 
                 {/* Bio description */}
                 <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed mb-6">

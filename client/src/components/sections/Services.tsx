@@ -78,8 +78,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       ref={ref}
       className={`fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
         service.highlight
-      ? "bg-[#8FBF8F] border-[#8FBF8F] text-white"
-            : "bg-white/60 border-[#2C2A26]/10 hover:border-[#8FBF8F]/40"
+      ? "bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
+            : "bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
       }`}
     >
       {/* Number */}

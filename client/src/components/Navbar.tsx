@@ -52,7 +52,7 @@ export default function Navbar() {
             <img
               src="https://image2url.com/r2/default/images/1773686578779-aae60c2f-dc93-4df5-9b54-80c8e4bdce98.png"
               alt="Yume Psicologia"
-              className="h-12 md:h-14 w-auto"
+              className="h-12 md:h-14 w-auto" style={{width: '117px', height: '50px'}}
             />
           </a>
 
