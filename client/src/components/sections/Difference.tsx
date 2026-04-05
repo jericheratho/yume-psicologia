@@ -77,7 +77,7 @@ export default function Difference() {
                 e.preventDefault();
                 document.querySelector("#servicos")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#8FBF8F] text-white font-body font-medium rounded-sm hover:bg-[#6B9B6B] transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#8FBF8F] font-body font-medium rounded-sm hover:bg-[#8FBF8F] hover:text-white transition-colors duration-300 border-2 border-[#8FBF8F]"
             >
               Nossos serviços ↓
             </a>
