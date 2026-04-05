@@ -67,23 +67,7 @@ export default function Booking() {
         </div>
 
         {/* Alternative booking methods */}
-        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 className="font-display text-lg font-light text-white mb-2">
-              Por email
-            </h3>
-            <p className="font-body text-sm font-light text-white/80">
-              <a href="mailto:yumepsicologia@gmail.com" className="text-white hover:underline font-medium">
-                yumepsicologia@gmail.com
-              </a>
-            </p>
-          </div>
-
+        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-center p-6">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-4">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
