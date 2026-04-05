@@ -76,44 +76,40 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   return (
     <div
       ref={ref}
-      className={`fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
-        service.highlight
-      ? "bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
-            : "bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
-      }`}
+      className="fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
     >
       {/* Number */}
       <span
-        className={`font-display text-5xl font-light leading-none mb-4 text-[#2C2A26]/8`}
+        className="font-display text-5xl font-light leading-none mb-4 text-[#2C2A26]/8 group-hover:text-white/20 transition-colors duration-500"
       >
         {service.number}
       </span>
 
       {/* Icon */}
-      <div className="w-10 h-10 flex items-center justify-center rounded-sm mb-5 bg-[#8FBF8F]/8">
+      <div className="w-10 h-10 flex items-center justify-center rounded-sm mb-5 bg-[#8FBF8F]/8 group-hover:bg-white/20 transition-colors duration-500">
         <Icon
           size={20}
           strokeWidth={1.5}
-          className="text-[#8FBF8F]"
+          className="text-[#8FBF8F] group-hover:text-white transition-colors duration-500"
         />
       </div>
 
       {/* Content */}
       <div className="flex-1">
-        <p className="font-body text-xs font-light tracking-[0.2em] uppercase mb-1 text-[#8FBF8F]">
+        <p className="font-body text-xs font-light tracking-[0.2em] uppercase mb-1 text-[#8FBF8F] group-hover:text-white transition-colors duration-500">
           {service.subtitle}
         </p>
-        <h3 className="font-display text-2xl font-medium mb-3 leading-tight text-[#2C2A26]">
+        <h3 className="font-display text-2xl font-medium mb-3 leading-tight text-[#2C2A26] group-hover:text-white transition-colors duration-500">
           {service.title}
         </h3>
-        <p className="font-body text-base font-light leading-relaxed text-[#4A4640]">
+        <p className="font-body text-base font-light leading-relaxed text-[#4A4640] group-hover:text-white/90 transition-colors duration-500">
           {service.description}
         </p>
       </div>
 
       {/* Tag */}
-      <div className="mt-5 pt-5 border-t border-current/10 flex flex-col gap-4">
-        <span className="font-body text-xs font-light tracking-wide text-[#8FBF8F]">
+      <div className="mt-5 pt-5 border-t border-current/10 group-hover:border-white/20 flex flex-col gap-4 transition-colors duration-500">
+        <span className="font-body text-xs font-light tracking-wide text-[#8FBF8F] group-hover:text-white transition-colors duration-500">
           {service.tag}
         </span>
         
@@ -122,11 +118,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           href={service.title === "Psicoterapia Individual" ? "http://bit.ly/4rwMSTN" : service.title === "Avaliação Neuropsicológica" ? "http://bit.ly/4tPDjR6" : service.title === "Acolhimento Terapêutico" ? "https://wa.me/message/YJ74EWIKNVCGA1" : "http://bit.ly/4aOYdqZ"}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-colors duration-300 ${
-            service.highlight
-              ? "bg-white text-[#8FBF8F] hover:bg-white/90"
-              : "bg-[#8FBF8F] text-white hover:bg-[#6B9B6B]"
-          }`}
+          className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-colors duration-300 bg-[#8FBF8F] text-white hover:bg-[#6B9B6B] group-hover:bg-white group-hover:text-[#8FBF8F]"
         >
           {service.title === "Psicoterapia Individual" ? "Agendar uma sessão individual" : service.title === "Avaliação Neuropsicológica" ? "Conheça a Avaliação" : service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Solicitar orçamento"}
         </a>
