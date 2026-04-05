@@ -36,7 +36,7 @@ const services = [
     title: "Acolhimento Terapêutico",
     subtitle: "Você não está sozinho",
     description:
-      "Aprofunde-se em um tema específico com um plano terapêutico claro e direcionado. Com feedbacks semanais, você acompanha seu progresso ao longo do tratamento, trabalhando cada questão no seu ritmo e com mais consciência sobre sua evolução.",
+      "Aprofunde-se em um tema específico com um plano terapêutico claro e direcionado. Com feedbacks mensais, você acompanha seu progresso ao longo do tratamento, trabalhando cada questão no seu ritmo e com mais consciência sobre sua evolução.",
     tag: "Plano terapêutico personalizado",
     highlight: false,
   },

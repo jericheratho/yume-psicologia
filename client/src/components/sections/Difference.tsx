@@ -17,7 +17,7 @@ const differentials = [
     icon: "📋",
   },
   {
-    title: "Feedbacks semanais",
+    title: "Feedbacks mensais",
     description: "Acompanhe seu progresso ao longo da terapia.",
     icon: "📈",
   },
@@ -51,7 +51,7 @@ export default function Difference() {
                 Após a primeira sessão, você recebe um <strong>Plano Terapêutico Individual</strong>, que apresenta com clareza os objetivos do tratamento e o caminho a ser percorrido.
               </p>
               <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
-                Durante o processo, você também conta com <strong>feedbacks semanais</strong>, acompanhando de forma clara sua evolução na terapia.
+                Durante o processo, você também conta com <strong>feedbacks mensais</strong>, acompanhando de forma clara sua evolução na terapia.
               </p>
             </div>
 
