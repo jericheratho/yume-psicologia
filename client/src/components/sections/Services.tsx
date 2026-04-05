@@ -84,58 +84,36 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     >
       {/* Number */}
       <span
-        className={`font-display text-5xl font-light leading-none mb-4 ${
-          service.highlight ? "text-white/20" : "text-[#2C2A26]/10"
-        }`}
+        className={`font-display text-5xl font-light leading-none mb-4 text-[#2C2A26]/8`}
       >
         {service.number}
       </span>
 
       {/* Icon */}
-      <div
-        className={`w-10 h-10 flex items-center justify-center rounded-sm mb-5 ${
-          service.highlight ? "bg-white/20" : "bg-[#8FBF8F]/10"
-        }`}
-      >
+      <div className="w-10 h-10 flex items-center justify-center rounded-sm mb-5 bg-[#8FBF8F]/8">
         <Icon
           size={20}
           strokeWidth={1.5}
-          className={service.highlight ? "text-white" : "text-[#7A8C7E]"}
+          className="text-[#8FBF8F]"
         />
       </div>
 
       {/* Content */}
       <div className="flex-1">
-        <p
-          className={`font-body text-xs font-light tracking-[0.2em] uppercase mb-1 ${
-            service.highlight ? "text-white/60" : "text-[#8FBF8F]"
-          }`}
-        >
+        <p className="font-body text-xs font-light tracking-[0.2em] uppercase mb-1 text-[#8FBF8F]">
           {service.subtitle}
         </p>
-        <h3
-          className={`font-display text-2xl font-medium mb-3 leading-tight ${
-            service.highlight ? "text-white" : "text-[#2C2A26]"
-          }`}
-        >
+        <h3 className="font-display text-2xl font-medium mb-3 leading-tight text-[#2C2A26]">
           {service.title}
         </h3>
-        <p
-          className={`font-body text-base font-light leading-relaxed ${
-            service.highlight ? "text-white/80" : "text-[#4A4640]"
-          }`}
-        >
+        <p className="font-body text-base font-light leading-relaxed text-[#4A4640]">
           {service.description}
         </p>
       </div>
 
       {/* Tag */}
       <div className="mt-5 pt-5 border-t border-current/10 flex flex-col gap-4">
-        <span
-          className={`font-body text-xs font-light tracking-wide ${
-               service.highlight ? "text-white" : "text-[#8FBF8F]"
-          }`}
-        >
+        <span className="font-body text-xs font-light tracking-wide text-[#8FBF8F]">
           {service.tag}
         </span>
         
