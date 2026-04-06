@@ -206,3 +206,16 @@
   .stagger-children.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
   .stagger-children.visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}

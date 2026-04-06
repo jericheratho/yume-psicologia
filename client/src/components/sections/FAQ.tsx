@@ -46,7 +46,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
     <div className="border-b border-[#2C2A26]/10 last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-start justify-between gap-4 py-6 text-left group"
+        className="w-full flex items-start justify-between gap-4 py-6 text-left group transition-all duration-300"
         aria-expanded={open}
       >
         <div className="flex items-start gap-4">
@@ -57,7 +57,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             {faq.question}
           </span>
         </div>
-        <div className="flex-shrink-0 mt-0.5">
+        <div className="flex-shrink-0 mt-0.5 transition-transform duration-300" style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}>
           {open ? (
             <Minus size={16} className="text-[#8FBF8F]" />
           ) : (
@@ -66,11 +66,11 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         </div>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-400 ease-out ${
-          open ? "max-h-48 pb-6" : "max-h-0"
+        className={`overflow-hidden transition-all duration-500 ease-out ${
+          open ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed pl-9">
+        <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed pl-9 animate-fade-in">
           {faq.answer}
         </p>
       </div>

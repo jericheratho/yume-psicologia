@@ -2,7 +2,7 @@
    Testimonials Section — Yume Psicologia
    Style: Editorial quote cards, warm cream, staggered layout
    ============================================================ */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
@@ -32,11 +32,27 @@ const testimonials = [
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const headingRef = useScrollReveal(0.2) as React.RefObject<HTMLDivElement>;
   const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
 
-  const prev = () => setActive((a) => (a === 0 ? testimonials.length - 1 : a - 1));
-  const next = () => setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
+  const prev = () => {
+    setActive((a) => (a === 0 ? testimonials.length - 1 : a - 1));
+    setIsAutoPlay(false);
+  };
+  const next = () => {
+    setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
+    setIsAutoPlay(false);
+  };
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlay) return;
+    const interval = setInterval(() => {
+      setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
+    }, 5000); // Change testimonial every 5 seconds
+    return () => clearInterval(interval);
+  }, [isAutoPlay]);
 
   return (
     <section id="depoimentos" className="py-24 md:py-32 bg-[#F9F8F6]">
@@ -59,10 +75,10 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* Featured quote */}
             <div className="lg:col-span-2 relative">
-              <div className="p-8 md:p-12 bg-white/70 border border-[#2C2A26]/10 rounded-sm min-h-[280px] flex flex-col justify-between">
+              <div className="p-8 md:p-12 bg-white/70 border border-[#2C2A26]/10 rounded-sm min-h-[280px] flex flex-col justify-between transition-all duration-500 ease-in-out" onMouseEnter={() => setIsAutoPlay(false)} onMouseLeave={() => setIsAutoPlay(true)}>
                 <div>
                   <Quote size={32} strokeWidth={1} className="text-[#C4896F]/40 mb-6" />
-                  <blockquote className="font-display text-xl md:text-2xl font-light text-[#2C2A26] leading-relaxed italic">
+                  <blockquote className="font-display text-xl md:text-2xl font-light text-[#2C2A26] leading-relaxed italic animate-fade-in">
                     "{testimonials[active].quote}"
                   </blockquote>
                 </div>
