@@ -82,8 +82,8 @@ export default function About() {
         {/* Section label */}
         <div ref={headingRef} className="fade-up mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#9AC89A]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#9AC89A]">
+            <div className="h-px w-8 bg-[#699169]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#699169]">
               Sobre a Yume
             </span>
           </div>
@@ -105,10 +105,10 @@ export default function About() {
               </span>
                <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">Um espaço de
                 <br />
-                <em className="italic text-[#9AC89A]">escuta</em>
-                <em className="italic text-[#9AC89A]">, elaboração</em>
+                <em className="italic text-[#699169]">escuta</em>
+                <em className="italic text-[#699169]">, elaboração</em>
                 <br />
-                e <em className="italic text-[#9AC89A]">transformação</em>.
+                e <em className="italic text-[#699169]">transformação</em>.
               </h2>
             </div>
           </div>
