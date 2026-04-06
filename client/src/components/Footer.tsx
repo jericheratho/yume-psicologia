@@ -19,12 +19,12 @@ export default function Footer() {
                 alt="Yume Psicologia"
                 className="h-20 w-auto brightness-0 invert"
                 style={{
-                  width: "218px",
-                  height: "85px",
+                  width: '158px',
+                  height: '65px',
                   paddingRight: "8px",
                   marginTop: "-6px",
                   marginRight: "-17px",
-                  marginLeft: "-41px"
+                  marginLeft: '-26px'
                 }}
               />
             </div>
