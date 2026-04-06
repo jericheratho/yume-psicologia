@@ -98,7 +98,7 @@ export default function Hero() {
 
           {/* Stats row */}
           <div
-            className={`flex gap-8 mt-14 pt-8 border-t border-white/20 transition-all duration-700 delay-[900ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`grid grid-cols-2 md:flex md:gap-8 gap-6 mt-14 pt-8 border-t border-white/20 transition-all duration-700 delay-[900ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {[
               { value: "100%", label: "Online" },
@@ -107,7 +107,7 @@ export default function Hero() {
               { value: "+1500", label: "atendimentos em todo o Brasil" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="font-display text-2xl font-medium text-white">{stat.value}</div>
+                <div className="font-display text-lg md:text-2xl font-medium text-white">{stat.value}</div>
                 <div className="font-body text-xs font-light text-white/70 tracking-wide mt-0.5">{stat.label}</div>
               </div>
             ))}
