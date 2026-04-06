@@ -2,6 +2,7 @@
    About Section — Yume Psicologia
    Style: Asymmetric layout, abstract watercolor background
    ============================================================ */
+import { useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ABSTRACT_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-abstract-2c7WeuKHSgUwjHrLrYr9sn.webp";
@@ -25,6 +26,40 @@ const values = [
   },
 ];
 
+function ValueCard({ value, index }: { value: typeof values[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => el.classList.add("visible"), index * 150);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index]);
+
+  return (
+    <div
+      ref={ref}
+      className="fade-up p-8 md:p-10 bg-white rounded-2xl shadow-lg border border-[#9AC89A]/20 hover:shadow-xl hover:border-[#9AC89A]/40 transition-all duration-700 hover:-translate-y-2"
+    >
+      <h3 className="font-display text-2xl font-medium text-[#2C2A26] mb-3">
+        {value.title}
+      </h3>
+      <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
+        {value.description}
+      </p>
+    </div>
+  );
+}
+
 export default function About() {
   const headingRef = useScrollReveal(0.15) as React.RefObject<HTMLDivElement>;
   const contentRef = useScrollReveal(0.1) as React.RefObject<HTMLDivElement>;
@@ -47,8 +82,8 @@ export default function About() {
         {/* Section label */}
         <div ref={headingRef} className="fade-up mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-[#8FBF8F]" />
-            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#8FBF8F]">
+            <div className="h-px w-8 bg-[#9AC89A]" />
+            <span className="font-body text-xs font-light tracking-[0.3em] uppercase text-[#9AC89A]">
               Sobre a Yume
             </span>
           </div>
@@ -70,10 +105,10 @@ export default function About() {
               </span>
                <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#2C2A26] leading-[1.15] relative">Um espaço de
                 <br />
-                <em className="italic text-[#8FBF8F]">escuta</em>
-                <em className="italic text-[#8FBF8F]">, elaboração</em>
+                <em className="italic text-[#9AC89A]">escuta</em>
+                <em className="italic text-[#9AC89A]">, elaboração</em>
                 <br />
-                e <em className="italic text-[#8FBF8F]">transformação</em>.
+                e <em className="italic text-[#9AC89A]">transformação</em>.
               </h2>
             </div>
           </div>
@@ -98,7 +133,7 @@ export default function About() {
             </p>
 
             {/* Accessibility note */}
-            <div className="mt-2 p-4 border border-[#8FBF8F]/30 bg-white/40 rounded-sm">
+            <div className="mt-2 p-4 border border-[#9AC89A]/30 bg-white/40 rounded-sm">
               <p className="font-body text-xs font-light text-[#4A4640] leading-relaxed">
                 💚 Cuidado psicológico que cabe no seu bolso, com{" "}
                 <strong className="font-medium">planos sociais</strong> e opção de{" "}
@@ -109,20 +144,10 @@ export default function About() {
         </div>
 
         {/* Values cards - centered grid */}
-        <div ref={valuesRef} className="stagger-children flex justify-center">
+        <div ref={valuesRef} className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
             {values.map((value, i) => (
-              <div
-                key={value.title}
-                className="p-8 md:p-10 bg-white rounded-2xl shadow-lg border border-[#8FBF8F]/20 hover:shadow-xl hover:border-[#8FBF8F]/40 transition-all duration-300"
-              >
-                <h3 className="font-display text-2xl font-medium text-[#2C2A26] mb-3">
-                  {value.title}
-                </h3>
-                <p className="font-body text-sm font-light text-[#4A4640] leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
+              <ValueCard key={value.title} value={value} index={i} />
             ))}
           </div>
         </div>
