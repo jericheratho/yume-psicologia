@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/hero-header_caa90f0c.jpeg";
+const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/hero-header-optimized_8b79f13a.jpeg";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
