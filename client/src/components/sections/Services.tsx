@@ -61,11 +61,11 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add("visible"), index * 100);
+          setTimeout(() => el.classList.add("visible"), index * 150);
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -76,40 +76,40 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   return (
     <div
       ref={ref}
-      className="fade-up group relative flex flex-col p-7 border transition-all duration-500 hover:shadow-lg hover:-translate-y-1 bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#8FBF8F] hover:border-[#8FBF8F] hover:text-white"
+      className="fade-up group relative flex flex-col p-7 border transition-all duration-700 hover:shadow-lg hover:-translate-y-2 bg-white border-[#2C2A26]/10 text-[#2C2A26] hover:bg-[#9AC89A] hover:border-[#9AC89A] hover:text-white"
     >
       {/* Number */}
       <span
-        className="font-display text-5xl font-light leading-none mb-4 text-[#2C2A26]/8 group-hover:text-white/20 transition-colors duration-500"
+        className="font-display text-5xl font-light leading-none mb-4 text-[#2C2A26]/8 group-hover:text-white/20 transition-all duration-700"
       >
         {service.number}
       </span>
 
       {/* Icon */}
-      <div className="w-10 h-10 flex items-center justify-center rounded-sm mb-5 bg-[#8FBF8F]/8 group-hover:bg-white/20 transition-colors duration-500">
+      <div className="w-10 h-10 flex items-center justify-center rounded-sm mb-5 bg-[#9AC89A]/8 group-hover:bg-white/20 transition-all duration-700 group-hover:scale-110">
         <Icon
           size={20}
           strokeWidth={1.5}
-          className="text-[#8FBF8F] group-hover:text-white transition-colors duration-500"
+          className="text-[#9AC89A] group-hover:text-white transition-all duration-700"
         />
       </div>
 
       {/* Content */}
       <div className="flex-1">
-        <p className="font-body text-xs font-light tracking-[0.2em] uppercase mb-1 text-[#8FBF8F] group-hover:text-white transition-colors duration-500">
+        <p className="font-body text-xs font-light tracking-[0.2em] uppercase mb-1 text-[#9AC89A] group-hover:text-white transition-all duration-700">
           {service.subtitle}
         </p>
-        <h3 className="font-display text-2xl font-medium mb-3 leading-tight text-[#2C2A26] group-hover:text-white transition-colors duration-500">
+        <h3 className="font-display text-2xl font-medium mb-3 leading-tight text-[#2C2A26] group-hover:text-white transition-all duration-700">
           {service.title}
         </h3>
-        <p className="font-body text-base font-light leading-relaxed text-[#4A4640] group-hover:text-white/90 transition-colors duration-500">
+        <p className="font-body text-base font-light leading-relaxed text-[#4A4640] group-hover:text-white/90 transition-all duration-700">
           {service.description}
         </p>
       </div>
 
       {/* Tag */}
-      <div className="mt-5 pt-5 border-t border-current/10 group-hover:border-white/20 flex flex-col gap-4 transition-colors duration-500">
-        <span className="font-body text-xs font-light tracking-wide text-[#8FBF8F] group-hover:text-white transition-colors duration-500">
+      <div className="mt-5 pt-5 border-t border-current/10 group-hover:border-white/20 flex flex-col gap-4 transition-all duration-700">
+        <span className="font-body text-xs font-light tracking-wide text-[#9AC89A] group-hover:text-white transition-all duration-700">
           {service.tag}
         </span>
         
@@ -118,7 +118,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           href={service.title === "Psicoterapia Individual" ? "http://bit.ly/4rwMSTN" : service.title === "Avaliação Neuropsicológica" ? "http://bit.ly/4tPDjR6" : service.title === "Acolhimento Terapêutico" ? "https://wa.me/message/YJ74EWIKNVCGA1" : "http://bit.ly/4aOYdqZ"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-colors duration-300 bg-[#8FBF8F] text-white hover:bg-[#6B9B6B] group-hover:bg-white group-hover:text-[#8FBF8F]"
+          className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-all duration-300 bg-[#9AC89A] text-white hover:bg-[#7BA87B] group-hover:bg-white group-hover:text-[#9AC89A]"
         >
           {service.title === "Psicoterapia Individual" ? "Agendar uma sessão individual" : service.title === "Avaliação Neuropsicológica" ? "Conheça a Avaliação" : service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Solicitar orçamento"}
         </a>
