@@ -61,11 +61,11 @@ export default function Hero() {
           >
             E se a sua história
             <br />
-            <em className="italic text-[#9AC89A]">não precisasse ser</em>
+            <em className="italic text-[#9AC89A]" style={{color: '#699169'}}>não precisasse ser</em>
             <br />
             corrigida, mas
             <br />
-            <em className="italic text-[#9AC89A]">elaborada?</em>
+            <em className="italic text-[#9AC89A]" style={{color: '#699169'}}>elaborada?</em>
           </h1>
 
           {/* Subtitle */}
