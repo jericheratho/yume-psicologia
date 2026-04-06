@@ -45,7 +45,7 @@ export default function Difference() {
             {/* Text content - left side */}
             <div className="space-y-5">
               <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
-                Na Yume Psicologia, o acolhimento começa no primeiro contato. Você pode iniciar a conversa por <strong>ligação</strong>, <strong>videochamada</strong> ou <strong>WhatsApp</strong> — da forma que for mais confortável para você.
+                Na Yume Psicologia, o acolhimento começa no primeiro contato. Você inicia a conversa por <strong>WhatsApp</strong> ou pode escolher o seu melhor dia e horário <a href="#agendamento" className="underline text-[#699169] hover:text-[#7BA87B] transition-colors">aqui no site</a>.
               </p>
               <p className="font-body text-base md:text-lg font-light text-[#4A4640] leading-relaxed">
                 Após a primeira sessão, você recebe um <strong>Plano Terapêutico Individual</strong>, que apresenta com clareza os objetivos do tratamento e o caminho a ser percorrido.
