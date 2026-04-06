@@ -32,8 +32,8 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/15 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/20 to-transparent" />
 
       {/* Kanji 夢 decorative background element */}
       <div
