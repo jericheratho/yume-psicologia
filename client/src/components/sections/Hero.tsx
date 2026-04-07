@@ -70,7 +70,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className={`font-body text-base md:text-lg font-light text-white/90 leading-relaxed mb-10 max-w-md transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-body text-base md:text-lg font-light text-white/90 leading-relaxed mb-10 max-w-sm md:max-w-md transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Cuidado em saúde mental online para quem quer entender e transformar
             a própria história. Com clareza, ética e proximidade.
