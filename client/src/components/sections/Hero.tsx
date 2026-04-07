@@ -44,8 +44,8 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative container pb-24 pt-40 md:pt-20 md:pb-32">
-        <div className="max-w-xl">
+      <div className="relative container pb-24 pt-32 md:pt-20 md:pb-32 lg:pb-40">
+        <div className="max-w-xl lg:max-w-2xl">
           {/* Eyebrow - hidden */}
           <div
             className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
@@ -70,7 +70,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className={`font-body text-base md:text-lg font-light text-white/90 leading-relaxed mb-10 max-w-sm md:max-w-md transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-body text-sm md:text-base lg:text-lg font-light text-white/90 leading-relaxed mb-8 md:mb-10 max-w-xs md:max-w-sm lg:max-w-md transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Cuidado em saúde mental online para quem quer entender e transformar
             a própria história. Com clareza, ética e proximidade.
