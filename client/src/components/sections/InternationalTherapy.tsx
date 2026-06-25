@@ -7,7 +7,8 @@ import {
   ComposableMap, 
   Geographies, 
   Geography, 
-  Marker 
+  Marker,
+  ZoomableGroup
 } from "react-simple-maps";
 import { Globe, Clock, MessageSquare, ShieldCheck } from "lucide-react";
 
@@ -81,51 +82,53 @@ export default function InternationalTherapy() {
               </span>
             </div>
             
-            <div className="w-full aspect-video md:aspect-[16/10]">
+            <div className="w-full aspect-video md:aspect-[16/10] cursor-move">
               <ComposableMap
                 projectionConfig={{
                   scale: 140,
                 }}
                 className="w-full h-full"
               >
-                <Geographies geography={geoUrl}>
-                  {({ geographies }) =>
-                    geographies.map((geo) => {
-                      const isHighlighted = highlightedCountries.some(c => c.id === geo.id);
-                      return (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          fill={isHighlighted ? "#8FBF8F" : "#E2E8E2"}
-                          stroke="#FFFFFF"
-                          strokeWidth={0.5}
-                          style={{
-                            default: { outline: "none" },
-                            hover: { fill: isHighlighted ? "#7BA87B" : "#D1D9D1", outline: "none" },
-                            pressed: { outline: "none" },
-                          }}
-                        />
-                      );
-                    })
-                  }
-                </Geographies>
-                {highlightedCountries.map(({ name, coordinates }) => (
-                  <Marker key={name} coordinates={coordinates}>
-                    <circle r={3} fill="#2C2A26" />
-                    <text
-                      textAnchor="middle"
-                      y={-10}
-                      style={{ 
-                        fontFamily: "var(--font-body)", 
-                        fontSize: "8px", 
-                        fill: "#2C2A26",
-                        fontWeight: 500
-                      }}
-                    >
-                      {name}
-                    </text>
-                  </Marker>
-                ))}
+                <ZoomableGroup zoom={1}>
+                  <Geographies geography={geoUrl}>
+                    {({ geographies }) =>
+                      geographies.map((geo) => {
+                        const isHighlighted = highlightedCountries.some(c => c.id === geo.id);
+                        return (
+                          <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={isHighlighted ? "#8FBF8F" : "#E2E8E2"}
+                            stroke="#FFFFFF"
+                            strokeWidth={0.5}
+                            style={{
+                              default: { outline: "none" },
+                              hover: { fill: isHighlighted ? "#7BA87B" : "#D1D9D1", outline: "none" },
+                              pressed: { outline: "none" },
+                            }}
+                          />
+                        );
+                      })
+                    }
+                  </Geographies>
+                  {highlightedCountries.map(({ name, coordinates }) => (
+                    <Marker key={name} coordinates={coordinates}>
+                      <circle r={3} fill="#2C2A26" />
+                      <text
+                        textAnchor="middle"
+                        y={-10}
+                        style={{ 
+                          fontFamily: "var(--font-body)", 
+                          fontSize: "8px", 
+                          fill: "#2C2A26",
+                          fontWeight: 500
+                        }}
+                      >
+                        {name}
+                      </text>
+                    </Marker>
+                  ))}
+                </ZoomableGroup>
               </ComposableMap>
             </div>
           </div>
@@ -165,7 +168,7 @@ export default function InternationalTherapy() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#8FBF8F] text-white font-body text-sm font-medium tracking-wide rounded-sm hover:bg-[#7BA87B] transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                Agendar consulta internacional
+                Agendar consulta
               </a>
             </div>
           </div>

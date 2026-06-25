@@ -3,11 +3,24 @@
    Style: Japonismo Contemporâneo — fixed top, transparent → cream on scroll
    ============================================================ */
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const services = [
+  { label: "Psicoterapia Individual", href: "#servicos" },
+  { label: "Avaliação Neuropsicológica", href: "#servicos" },
+  { label: "Acolhimento Terapêutico", href: "#servicos" },
+  { label: "Orientação & Acompanhamento", href: "#servicos" },
+  { label: "Brasileiros no Exterior", href: "#exterior" },
+];
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
-  { label: "Serviços", href: "#servicos" },
   { label: "Sobre", href: "#sobre" },
   { label: "Equipe", href: "#equipe" },
   { label: "Depoimentos", href: "#depoimentos" },
@@ -40,15 +53,12 @@ export default function Navbar() {
         }`}
       >
         <div className="container flex items-center justify-between h-16 md:h-20">
-          {/* Decorative line - hidden */}
-          <div className="hidden" />
           {/* Logo */}
           <a
             href="#inicio"
             onClick={(e) => { e.preventDefault(); handleNavClick("#inicio"); }}
             className="flex items-center gap-2 group"
           >
-            {/* Replace with your logo image */}
             <img
               src="https://image2url.com/r2/default/images/1773686578779-aae60c2f-dc93-4df5-9b54-80c8e4bdce98.png"
               alt="Yume Psicologia"
@@ -58,7 +68,37 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            <a
+              href="#inicio"
+              onClick={(e) => { e.preventDefault(); handleNavClick("#inicio"); }}
+              className={`font-body text-sm font-light tracking-wide transition-colors duration-300 ${
+                scrolled ? "text-[#7A8C7E] hover:text-[#6B9B6B]" : "text-white hover:text-[#ddf8e3]"
+              }`}
+            >
+              Início
+            </a>
+
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 font-body text-sm font-light tracking-wide transition-colors duration-300 outline-none ${
+                scrolled ? "text-[#7A8C7E] hover:text-[#6B9B6B]" : "text-white hover:text-[#ddf8e3]"
+              }`}>
+                Serviços <ChevronDown size={14} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-white border-[#E8F0E8] p-2 min-w-[220px]">
+                {services.map((service) => (
+                  <DropdownMenuItem
+                    key={service.label}
+                    className="font-body text-sm font-light text-[#4A4640] hover:text-[#8FBF8F] hover:bg-[#F9FBF9] cursor-pointer py-2.5 px-3"
+                    onClick={() => handleNavClick(service.href)}
+                  >
+                    {service.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navLinks.slice(1).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -70,6 +110,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            
             <a
               href="https://wa.me/message/YJ74EWIKNVCGA1"
               target="_blank"
@@ -82,7 +123,7 @@ export default function Navbar() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden p-2 text-[#2C2A26]"
+            className={`md:hidden p-2 ${scrolled ? "text-[#2C2A26]" : "text-white"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
@@ -93,20 +134,43 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-white flex flex-col justify-center items-center gap-8 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-white flex flex-col justify-center items-center gap-6 transition-all duration-500 md:hidden overflow-y-auto pt-20 pb-10 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        {navLinks.map((link) => (
+        <a
+          href="#inicio"
+          onClick={(e) => { e.preventDefault(); handleNavClick("#inicio"); }}
+          className="font-display text-2xl font-light text-[#2C2A26]"
+        >
+          Início
+        </a>
+        
+        <div className="flex flex-col items-center gap-4">
+          <span className="font-body text-xs font-medium uppercase tracking-widest text-[#8FBF8F]">Serviços</span>
+          {services.map((service) => (
+            <a
+              key={service.label}
+              href={service.href}
+              onClick={(e) => { e.preventDefault(); handleNavClick(service.href); }}
+              className="font-display text-xl font-light text-[#4A4640]"
+            >
+              {service.label}
+            </a>
+          ))}
+        </div>
+
+        {navLinks.slice(1).map((link) => (
           <a
             key={link.href}
             href={link.href}
             onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-            className="font-display text-3xl font-light text-[#2C2A26] hover:text-[#7A8C7E] transition-colors"
+            className="font-display text-2xl font-light text-[#2C2A26]"
           >
             {link.label}
           </a>
         ))}
+        
         <a
           href="https://wa.me/message/YJ74EWIKNVCGA1"
           target="_blank"
