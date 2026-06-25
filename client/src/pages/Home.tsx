@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import Difference from "@/components/sections/Difference";
 import Services from "@/components/sections/Services";
+import InternationalTherapy from "@/components/sections/InternationalTherapy";
 import About from "@/components/sections/About";
 import Team from "@/components/sections/Team";
 import Booking from "@/components/sections/Booking";
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <Difference />
       <Services />
+      <InternationalTherapy />
       <About />
       <Team />
       <Booking />
