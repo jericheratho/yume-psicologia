@@ -12,10 +12,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const services = [
-  { label: "Psicoterapia Individual", href: "#servicos" },
-  { label: "Avaliação Neuropsicológica", href: "#servicos" },
-  { label: "Acolhimento Terapêutico", href: "#servicos" },
-  { label: "Orientação & Acompanhamento", href: "#servicos" },
+  { label: "Psicoterapia Individual", href: "/servicos/psicoterapia-individual" },
+  { label: "Avaliação Neuropsicológica", href: "/servicos/avaliacao-neuropsicologica" },
+  { label: "Acolhimento & Avaliação para Cirurgias", href: "/servicos/acolhimento-cirurgias" },
+  { label: "Orientação & Acompanhamento", href: "/servicos/orientacao-acompanhamento" },
   { label: "Brasileiros no Exterior", href: "#exterior" },
 ];
 
@@ -91,7 +91,13 @@ export default function Navbar() {
                   <DropdownMenuItem
                     key={service.label}
                     className="font-body text-sm font-light text-[#4A4640] hover:text-[#699169] hover:bg-[#F9FBF9] cursor-pointer py-2.5 px-3 transition-colors"
-                    onClick={() => handleNavClick(service.href)}
+                    onClick={() => {
+                      if (service.href.startsWith("#")) {
+                        handleNavClick(service.href);
+                      } else {
+                        window.location.href = service.href;
+                      }
+                    }}
                   >
                     {service.label}
                   </DropdownMenuItem>
@@ -157,7 +163,12 @@ export default function Navbar() {
             <a
               key={service.label}
               href={service.href}
-              onClick={(e) => { e.preventDefault(); handleNavClick(service.href); }}
+              onClick={(e) => { 
+                if (service.href.startsWith("#")) {
+                  e.preventDefault(); 
+                  handleNavClick(service.href); 
+                }
+              }}
               className="font-display text-xl font-light text-[#4A4640]"
             >
               {service.label}

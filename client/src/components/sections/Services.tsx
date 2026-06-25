@@ -19,6 +19,7 @@ const services = [
       "Um espaço seguro para falar do que está pesado, entender seus padrões e começar a agir diferente. Acompanhamento psicológico estruturado para quem busca clareza, direção e mudança real.",
     tag: "Gestalt-terapia · TCC",
     highlight: true,
+    slug: "psicoterapia-individual",
   },
   {
     icon: ClipboardList,
@@ -29,16 +30,18 @@ const services = [
       "Investigação responsável e humanizada. Indicada para diagnóstico de TDAH, TEA, Altas Habilidades e outros, laudo clínico ou orientação especializada.",
     tag: "TDAH · TEA · AH",
     highlight: false,
+    slug: "avaliacao-neuropsicologica",
   },
   {
     icon: Users,
     number: "03",
-    title: "Acolhimento Terapêutico",
-    subtitle: "Você não está sozinho",
+    title: "Acolhimento & Avaliação para Cirurgias",
+    subtitle: "Procedimentos Estéticos",
     description:
-      "Aprofunde-se em um tema específico com um plano terapêutico claro e direcionado. Com feedbacks mensais, você acompanha seu progresso ao longo do tratamento, trabalhando cada questão no seu ritmo e com mais consciência sobre sua evolução.",
-    tag: "Plano terapêutico personalizado",
+      "Acolhimento e orientação psicológica especializada para quem irá realizar procedimentos estéticos ou cirurgias. Um suporte essencial para sua segurança emocional e bem-estar.",
+    tag: "Estética · Cirurgias · Bem-estar",
     highlight: false,
+    slug: "acolhimento-cirurgias",
   },
   {
     icon: Compass,
@@ -49,6 +52,7 @@ const services = [
       "Para momentos de decisão, crise ou situações específicas que precisam de direção. Indicado a profissionais e estudantes que buscam suporte pontual e qualificado.",
     tag: "Profissionais · Estudantes",
     highlight: false,
+    slug: "orientacao-acompanhamento",
   },
 ];
 
@@ -114,14 +118,22 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         </span>
         
         {/* WhatsApp Button */}
-        <a
-          href={service.title === "Psicoterapia Individual" ? "http://bit.ly/4rwMSTN" : service.title === "Avaliação Neuropsicológica" ? "http://bit.ly/4tPDjR6" : service.title === "Acolhimento Terapêutico" ? "https://wa.me/message/YJ74EWIKNVCGA1" : "http://bit.ly/4aOYdqZ"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-all duration-300 bg-[#9AC89A] text-white hover:bg-[#7BA87B] group-hover:bg-white group-hover:text-[#9AC89A]"
-        >
-          {service.title === "Psicoterapia Individual" ? "Agendar uma sessão individual" : service.title === "Avaliação Neuropsicológica" ? "Conheça a Avaliação" : service.title === "Acolhimento Terapêutico" ? "Saiba mais" : "Solicitar orçamento"}
-        </a>
+        <div className="flex flex-col gap-2">
+          <a
+            href={`/servicos/${service.slug}`}
+            className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-all duration-300 border border-[#9AC89A] text-[#9AC89A] hover:bg-[#9AC89A] hover:text-white group-hover:border-white group-hover:text-white group-hover:hover:bg-white group-hover:hover:text-[#9AC89A]"
+          >
+            Ver detalhes
+          </a>
+          <a
+            href={service.title === "Psicoterapia Individual" ? "http://bit.ly/4rwMSTN" : service.title === "Avaliação Neuropsicológica" ? "http://bit.ly/4tPDjR6" : service.slug === "acolhimento-cirurgias" ? "https://estetica.yumepsicologia.com.br/" : "http://bit.ly/4aOYdqZ"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2.5 text-xs font-medium tracking-wide rounded-sm transition-all duration-300 bg-[#9AC89A] text-white hover:bg-[#7BA87B] group-hover:bg-white group-hover:text-[#9AC89A]"
+          >
+            {service.title === "Psicoterapia Individual" ? "Agendar sessão" : service.title === "Avaliação Neuropsicológica" ? "Agendar avaliação" : service.slug === "acolhimento-cirurgias" ? "Saiba mais" : "Solicitar orçamento"}
+          </a>
+        </div>
       </div>
     </div>
   );
