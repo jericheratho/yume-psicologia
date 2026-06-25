@@ -74,7 +74,10 @@ export default function InternationalTherapy() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Interactive Map - Left Side (8 columns) */}
-          <div ref={mapRef} className="lg:col-span-7 bg-[#F9FBF9] rounded-3xl p-4 md:p-8 border border-[#E8F0E8] relative">
+          <div 
+            ref={mapRef} 
+            className="lg:col-span-7 bg-[#F9FBF9] rounded-3xl p-4 md:p-8 border border-[#E8F0E8] relative transition-all duration-1000 transform opacity-0 scale-90 [&.visible]:opacity-100 [&.visible]:scale-100 shadow-sm [&.visible]:shadow-xl"
+          >
             <div className="absolute top-6 left-8 z-10">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 backdrop-blur-sm border border-[#8FBF8F]/20 rounded-full text-[10px] font-medium tracking-wider uppercase text-[#699169]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8FBF8F] animate-pulse" />
@@ -134,7 +137,10 @@ export default function InternationalTherapy() {
           </div>
 
           {/* Features - Right Side (5 columns) */}
-          <div ref={contentRef} className="lg:col-span-5 space-y-8">
+          <div 
+            ref={contentRef} 
+            className="lg:col-span-5 space-y-8 transition-all duration-1000 delay-300 transform translate-x-10 opacity-0 [&.visible]:opacity-100 [&.visible]:translate-x-0"
+          >
             <div className="space-y-4">
               <h3 className="font-display text-2xl md:text-3xl font-light text-[#2C2A26]">
                 Sua cultura, sua língua, <br />
