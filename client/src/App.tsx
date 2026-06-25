@@ -9,8 +9,10 @@ import Home from "./pages/Home";
 // Import Service Pages
 import IndividualTherapy from "./pages/services/IndividualTherapy";
 import NeuropsychologicalEvaluation from "./pages/services/NeuropsychologicalEvaluation";
+import PsychologicalEvaluation from "./pages/services/PsychologicalEvaluation";
 import SurgeryAcolhimento from "./pages/services/SurgeryAcolhimento";
 import Orientation from "./pages/services/Orientation";
+import InternationalTherapyPage from "./pages/services/InternationalTherapyPage";
 
 function Router() {
   return (
@@ -20,8 +22,10 @@ function Router() {
       {/* Service Routes */}
       <Route path={"/servicos/psicoterapia-individual"} component={IndividualTherapy} />
       <Route path={"/servicos/avaliacao-neuropsicologica"} component={NeuropsychologicalEvaluation} />
+      <Route path={"/servicos/avaliacao-psicologica"} component={PsychologicalEvaluation} />
       <Route path={"/servicos/acolhimento-cirurgias"} component={SurgeryAcolhimento} />
       <Route path={"/servicos/orientacao-acompanhamento"} component={Orientation} />
+      <Route path={"/servicos/brasileiros-no-exterior"} component={InternationalTherapyPage} />
       
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
