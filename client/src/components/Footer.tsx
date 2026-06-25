@@ -184,7 +184,7 @@ export default function Footer() {
                 Adequação à LGPD (Lei 13.709/18)
               </p>
               <p className="font-body text-xs font-light text-white/25">
-                Clínica credenciada · CRP 06/
+                Clínica credenciada · CRP 06 21594/J
               </p>
             </div>
           </div>
