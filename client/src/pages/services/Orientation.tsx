@@ -19,7 +19,7 @@ Diferente da psicoterapia de longo prazo, a orientação busca clareza imediata 
         "Estratégias de enfrentamento",
         "Atendimento objetivo e direcionado"
       ]}
-      image="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/hero-header-optimized_8b79f13a.jpeg"
+      image="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop"
       whatsappLink="http://bit.ly/4aOYdqZ"
       whatsappLabel="Solicitar orçamento"
     />

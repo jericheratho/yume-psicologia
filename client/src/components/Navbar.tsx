@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLocation } from "wouter";
 
 const services = [
   { label: "Psicoterapia Individual", href: "/servicos/psicoterapia-individual" },
@@ -31,6 +32,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -40,11 +42,19 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
+    
     if (href.startsWith("#")) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      if (location === "/") {
+        // Se já estiver na home, apenas faz o scroll
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Se estiver em outra página, vai para a home com a âncora
+        setLocation("/" + href);
+      }
     } else {
-      window.location.href = href;
+      // Navegação para páginas internas
+      setLocation(href);
     }
   };
 
@@ -62,10 +72,8 @@ export default function Navbar() {
           <a
             href="/"
             onClick={(e) => { 
-              if (window.location.pathname === "/") {
-                e.preventDefault(); 
-                handleNavClick("#inicio"); 
-              }
+              e.preventDefault(); 
+              handleNavClick("#inicio"); 
             }}
             className="flex items-center gap-2 group"
           >
@@ -82,10 +90,8 @@ export default function Navbar() {
             <a
               href="/"
               onClick={(e) => { 
-                if (window.location.pathname === "/") {
-                  e.preventDefault(); 
-                  handleNavClick("#inicio"); 
-                }
+                e.preventDefault(); 
+                handleNavClick("#inicio"); 
               }}
               className={`font-body text-sm font-medium tracking-wide transition-colors duration-300 ${
                 scrolled ? "text-[#4A4640] hover:text-[#699169]" : "text-[#2C2A26] hover:text-[#699169]"
@@ -119,10 +125,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => { 
-                  if (window.location.pathname === "/") {
-                    e.preventDefault(); 
-                    handleNavClick(link.href); 
-                  }
+                  e.preventDefault(); 
+                  handleNavClick(link.href); 
                 }}
                 className={`font-body text-sm font-medium tracking-wide transition-colors duration-300 ${
                   scrolled ? "text-[#4A4640] hover:text-[#699169]" : "text-[#2C2A26] hover:text-[#699169]"
@@ -162,10 +166,8 @@ export default function Navbar() {
         <a
           href="/"
           onClick={(e) => { 
-            if (window.location.pathname === "/") {
-              e.preventDefault(); 
-              handleNavClick("#inicio"); 
-            }
+            e.preventDefault(); 
+            handleNavClick("#inicio"); 
           }}
           className="font-display text-2xl font-light text-[#2C2A26]"
         >
@@ -179,9 +181,7 @@ export default function Navbar() {
               key={service.label}
               href={service.href}
               onClick={(e) => { 
-                if (service.href.startsWith("#")) {
-                  e.preventDefault(); 
-                }
+                e.preventDefault(); 
                 handleNavClick(service.href); 
               }}
               className="font-display text-xl font-light text-[#4A4640] text-center px-6"
@@ -196,9 +196,7 @@ export default function Navbar() {
             key={link.href}
             href={link.href}
             onClick={(e) => { 
-              if (window.location.pathname === "/") {
-                e.preventDefault(); 
-              }
+              e.preventDefault(); 
               handleNavClick(link.href); 
             }}
             className="font-display text-2xl font-light text-[#2C2A26]"

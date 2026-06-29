@@ -19,7 +19,7 @@ Trabalhamos com embasamento científico e uma escuta sensível, garantindo que c
         "Suporte em momentos de crise",
         "Flexibilidade de horários online"
       ]}
-      image="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-therapy-k3TNWzqPvFJeZksvzMJsV5.webp"
+      image="https://images.unsplash.com/photo-1527137342181-19aab11a8ee1?q=80&w=2070&auto=format&fit=crop"
       whatsappLink="http://bit.ly/4rwMSTN"
       whatsappLabel="Agendar sessão individual"
     />

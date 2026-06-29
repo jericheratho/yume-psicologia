@@ -91,13 +91,24 @@ export default function ServiceDetail({
             </div>
 
             {/* Right side: Image & Card */}
-            <div className="space-y-8">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={image} alt={title} className="w-full h-auto" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2C2A26]/20 to-transparent" />
+            <div className="space-y-12">
+              <div className="relative">
+                {/* Artistic background shape */}
+                <div className="absolute -inset-4 bg-[#8FBF8F]/5 rounded-full blur-3xl" />
+                
+                <div className="relative rounded-[2rem] overflow-hidden shadow-sm border border-[#8FBF8F]/10">
+                  <img src={image} alt={title} className="w-full h-auto object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5]" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#F5F0E8]/20 via-transparent to-transparent" />
+                </div>
+
+                {/* Decorative element */}
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#F5F0E8] rounded-full border border-[#8FBF8F]/20 flex items-center justify-center shadow-sm hidden md:flex">
+                  <div className="w-16 h-16 rounded-full border border-dashed border-[#8FBF8F]/40 animate-[spin_20s_linear_infinite]" />
+                  <span className="absolute font-display text-[#8FBF8F] text-2xl">夢</span>
+                </div>
               </div>
               
-              <div className="bg-white p-8 rounded-2xl border border-[#E8F0E8] shadow-sm space-y-6">
+              <div className="bg-white/50 backdrop-blur-sm p-10 rounded-[2rem] border border-[#8FBF8F]/10 shadow-sm space-y-6">
                 <h4 className="font-display text-xl font-light text-[#2C2A26]">Por que escolher a Yume?</h4>
                 <p className="font-body text-sm text-[#4A4640] leading-relaxed">
                   Na Yume, acreditamos que a psicologia deve ser próxima, ética e humana. Nosso compromisso é com a sua transformação e bem-estar, oferecendo um ambiente seguro para que você possa ser quem você é.

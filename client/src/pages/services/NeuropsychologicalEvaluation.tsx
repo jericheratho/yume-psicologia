@@ -19,7 +19,7 @@ Este serviço é fundamental para quem busca entender dificuldades de aprendizag
         "Testes padrão ouro",
         "Abordagem humanizada"
       ]}
-      image="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-group-YPW5WVAh2XD3HzurKjvMWR.webp"
+      image="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop"
       whatsappLink="http://bit.ly/4tPDjR6"
       whatsappLabel="Conheça a Avaliação"
     />

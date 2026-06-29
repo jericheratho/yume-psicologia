@@ -19,7 +19,7 @@ Seja para um diagnóstico de saúde mental, orientação vocacional ou suporte a
         "Orientação para tratamento",
         "Processo ético e sigiloso"
       ]}
-      image="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/yume-therapy-k3TNWzqPvFJeZksvzMJsV5.webp"
+      image="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2070&auto=format&fit=crop"
       whatsappLink="http://bit.ly/4tPDjR6"
       whatsappLabel="Solicitar Avaliação Psicológica"
     />

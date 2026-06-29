@@ -19,7 +19,7 @@ Para mais informações detalhadas sobre este serviço específico, você també
         "Foco na autoimagem e autoestima",
         "Parceria com cirurgiões especialistas"
       ]}
-      image="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
+      image="https://images.unsplash.com/photo-1516534775068-ba3e84529519?q=80&w=2070&auto=format&fit=crop"
       whatsappLink="https://estetica.yumepsicologia.com.br/"
       whatsappLabel="Saiba mais sobre Estética"
     />
