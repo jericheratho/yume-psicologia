@@ -1,11 +1,9 @@
-/* ============================================================
+/* ===========================================================
    Hero Section — Yume Psicologia
    Style: Light, airy, editorial layout with minimalist sage green
-   ============================================================ */
+   =========================================================== */
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
-
-const HERO_IMAGE = "https://id-preview--cb606e2c-522b-4d0a-85f0-fd1fb9def611.lovable.app/__l5e/assets-v1/d7676927-bffa-41ba-a17b-c1f4a22eeb84/yume-therapy-header.jpg";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -24,17 +22,16 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-end overflow-hidden bg-[#F5F0E8]"
     >
-      {/* Image background with lighter treatment */}
-      <div className="absolute inset-0">
-        <img
-          src={HERO_IMAGE}
-          alt="Psicóloga negra acolhendo um paciente negro em uma sessão de terapia"
-          className={`w-full h-full object-cover transition-all duration-[2000ms] ease-out ${loaded ? "scale-100 opacity-80" : "scale-105 opacity-0"}`}
-        />
-        {/* Subtle light gradients for text readability without darkening too much */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8]/40 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F5F0E8]/60 via-transparent to-transparent" />
-      </div>
+      {/* Brand gradient background ∔ white, sage green and brown *}}
+      <div
+        className={`absolute inset-0 transition-opacity duration-[2000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{
+          background:
+            "linear-gradient(115deg, #F5F0E8 0%, #F0F4EC 20%, #DCE8DA 42%, #A9CCA4 62%, #8FBF8F 76%, #6B8A5E 90%, #4A4640 100%)",
+        }}
+      />
+      {/* Soft light sweep to keep the text side airy */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8]/70 via-[#F5F0E8]/20 to-transparent" />
 
       {/* Kanji 夢 decorative background element - more subtle */}
       <div
@@ -51,7 +48,7 @@ export default function Hero() {
           <div
             className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            <div className="h-px w-8 bg-[#8FBF8F]" />
+            <div className="h-px w-8 bg-[#8FBF8]" />
             <span className="font-body text-[10px] font-bold tracking-[0.4em] uppercase text-[#699169]">
               Acolhimento & Psicoterapia
             </span>
