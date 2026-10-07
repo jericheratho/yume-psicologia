@@ -58,8 +58,8 @@ export default function Difference() {
             {/* Video call image - right side with interaction effect */}
             <div ref={imageRef} className="flex justify-center">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/YumePsicologia(1)_240ca9b3.png"
-                alt="Video call interface"
+                src="https://id-preview--cb606e2c-522b-4d0a-85f0-fd1fb9def611.lovable.app/__l5e/assets-v1/9eab7205-11b2-4cf9-8fe0-5f6f15bfaef6/yume-care.png"
+                alt="Acolhimento online na Yume Psicologia"
                 className="w-full h-auto animate-pulse"
                 style={{
                   filter: 'drop-shadow(0 0 20px rgba(143, 191, 143, 0.4))',

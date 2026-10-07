@@ -5,8 +5,8 @@
 import { useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const HANNA_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/1_4320cbef.webp";
-const EZEQUIAS_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/2_9242878d.webp";
+const HANNA_IMAGE = "https://id-preview--cb606e2c-522b-4d0a-85f0-fd1fb9def611.lovable.app/__l5e/assets-v1/6f4505e7-3457-4c94-ac5b-8cbf6b6c6043/hanna.png";
+const EZEQUIAS_IMAGE = "https://id-preview--cb606e2c-522b-4d0a-85f0-fd1fb9def611.lovable.app/__l5e/assets-v1/8b6e8337-0630-4451-991a-8f38bec83080/ezequias.jpg";
 
 const team = [
   {

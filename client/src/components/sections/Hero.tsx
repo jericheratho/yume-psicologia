@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663443647826/fadj7bBwwHboDxncWj7Nu6/hero-header-optimized_8b79f13a.jpeg";
+const HERO_IMAGE = "https://id-preview--cb606e2c-522b-4d0a-85f0-fd1fb9def611.lovable.app/__l5e/assets-v1/d7676927-bffa-41ba-a17b-c1f4a22eeb84/yume-therapy-header.jpg";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src={HERO_IMAGE}
-          alt="Therapeutic session"
+          alt="Psicóloga negra acolhendo um paciente negro em uma sessão de terapia"
           className={`w-full h-full object-cover transition-all duration-[2000ms] ease-out ${loaded ? "scale-100 opacity-80" : "scale-105 opacity-0"}`}
         />
         {/* Subtle light gradients for text readability without darkening too much */}
