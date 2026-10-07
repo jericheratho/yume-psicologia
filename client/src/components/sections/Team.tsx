@@ -70,7 +70,7 @@ function TeamCard({ member, index }: { member: typeof team[0]; index: number }) 
         <img
           src={member.photo}
           alt={member.name}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${member.photo === HANNA_IMAGE ? "object-top" : "object-center"}`}
         />
         {/* Instagram icon overlay */}
         <a
