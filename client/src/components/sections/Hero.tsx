@@ -4,6 +4,7 @@
    =========================================================== */
 import { useEffect, useState } from "react";
 import { ArrowDown } from "lucide-react";
+import headerVideo from "@/assets/videos/yume-header.mp4";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -22,16 +23,21 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-end overflow-hidden bg-[#F5F0E8]"
     >
-      {/* Brand gradient background ∔ white, sage green and brown *}}
-      <div
-        className={`absolute inset-0 transition-opacity duration-[2000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{
-          background:
-            "linear-gradient(115deg, #F5F0E8 0%, #F0F4EC 20%, #DCE8DA 42%, #A9CCA4 62%, #8FBF8F 76%, #6B8A5E 90%, #4A4640 100%)",
-        }}
+      {/* Ambient video background */}
+      <video
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+        src={headerVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
       />
-      {/* Soft light sweep to keep the text side airy */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8]/70 via-[#F5F0E8]/20 to-transparent" />
+
+      {/* Brand gradient overlay — cream → sage, keeping the text side airy */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0E8]/95 via-[#F5F0E8]/55 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#F5F0E8]/70 via-transparent to-[#F5F0E8]/20" />
 
       {/* Kanji 夢 decorative background element - more subtle */}
       <div
